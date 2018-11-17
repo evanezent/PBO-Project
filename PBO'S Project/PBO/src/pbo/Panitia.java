@@ -111,4 +111,20 @@ public class Panitia extends Keperluan {
             }
             kandidat.remove(i);
         }
+    
+    public boolean login_peserta()
+    {
+        String x;
+        int i =0;
+        System.out.print("Masukan Nomor KTP : ");
+        x = input.nextLine();
+        while (i<pemilih.size() && !pemilih.get(i).getNoKtp().equals(x));
+        {
+            i++;
+        };
+        if (pemilih.get(i).getNoKtp().equals(x)) return true;
+        else return false;
+        
+        
+    }
 }
