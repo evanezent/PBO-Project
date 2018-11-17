@@ -64,6 +64,22 @@ public class Admin implements MenuTambahan{
         }
         panitia.remove(i);
     }
+    
+    public void login_panitia()
+    {
+        int i=0;
+            
+            String p,u;
+            do
+            {
+                System.out.print("Username : ");
+                u = input.nextLine();
+                System.out.print("Password : ");
+                p = input.nextLine();
+                i++;
+            }while (i<=panitia.size() && !panitia.get(i).getUser_panitia().equals(u) || !panitia.get(i).getPasw_panitia().equals(p));
+            if (i == panitia.size()) System.out.println("User tidak Ada");
 
+    }
  
 }
