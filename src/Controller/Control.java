@@ -10,5 +10,8 @@ package Controller;
  * @author esber
  */
 public class Control {
-    
+
+    public Control() {
+    }
+       
 }
