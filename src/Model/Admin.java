@@ -59,5 +59,7 @@ public class Admin implements MenuTambahan{
             if (panitia.get(i).getUser_panitia().equals(u) && panitia.get(i).getPasw_panitia().equals(p)) return true;
             else return false;
     }
+    
+    
  
 }

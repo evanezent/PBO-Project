@@ -47,28 +47,16 @@ public class Panitia extends Keperluan {
     
 
     
-    //PEMILIH 
-    public void tambah()
+
+    public void tambah(String nama, String noKtp,String ttl, String alamat)
     {
-        String nama, noKtp, ttl, alamat;
-        System.out.print("Nama Pemilih : ");
-        nama = input.nextLine();
-        System.out.println("Nomor KTP    : ");
-        noKtp = input.nextLine();
-        System.out.println("TTL          : ");
-        ttl = input.nextLine();
-        System.out.println("Alamat       : ");
-        alamat = input.nextLine();
-        
         pemilih.add(new Pemilih(nama,noKtp,ttl,alamat));
     }
     
-    public void hapus()
+    public void hapus(String noKtp)
     {
-        System.out.print("Hapus Pemilih, Nomor KTP : ");
-        String x = input.nextLine();
         int i =0;
-        while (i<= pemilih.size() && !pemilih.get(i).getNoKtp().equals(x)) {
+        while (i<= pemilih.size() && !pemilih.get(i).getNoKtp().equals(noKtp)) {
             ++i;
         }
         pemilih.remove(i);
@@ -84,47 +72,40 @@ public class Panitia extends Keperluan {
         }
     }
     //KANDIDAT
-    public void addKandidat()
+    public void addKandidat(String ketua,String wakil,String partai, int no_urut)
     {
-        String ketua, wakil, partai;
-        int no_urut;
-        System.out.print("Nama Ketua : ");
-        ketua = input.nextLine();
-        System.out.print("Nama Wakil : ");
-        wakil = input.nextLine();
-        System.out.print("Nomor Urut : ");
-        no_urut = input.nextInt();
-        System.out.print("Partai     : ");
-        partai = input.nextLine();
-        
         kandidat.add(new Kandidat(ketua,wakil,no_urut,partai));
     }
     
-    public void hapusKandidat()
+    public void hapusKandidat(int noUrut)
         {
-            System.out.print("Hapus Kandidat No Urut : ");
-            int x = input.nextInt();
             int i = 0;
-            while (i<=kandidat.size() && kandidat.get(i).getNo_urut() != x)
+            while (i<=kandidat.size() && kandidat.get(i).getNo_urut() != noUrut)
             {
                 i++;
             }
             kandidat.remove(i);
         }
     
-    public boolean login_peserta()
+    public boolean login_peserta(int noKtp)
     {
-        String x;
         int i =0;
-        System.out.print("Masukan Nomor KTP : ");
-        x = input.nextLine();
-        while (i<pemilih.size() && !pemilih.get(i).getNoKtp().equals(x));
+        while (i<pemilih.size() && !pemilih.get(i).getNoKtp().equals(noKtp));
         {
             i++;
         };
-        if (pemilih.get(i).getNoKtp().equals(x)) return true;
+        if (pemilih.get(i).getNoKtp().equals(noKtp)) return true;
         else return false;
         
-        
+    }
+
+    @Override
+    public void tambah() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void hapus() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
