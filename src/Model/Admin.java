@@ -9,7 +9,7 @@ public class Admin implements MenuTambahan{
     private String password_admin = "a";
     private List<Panitia> panitia = new ArrayList();
     int idx;
-    //aaaksodaksodkaodksa
+    //aaaksodaksodkaodksaaaaa
     Scanner input = new Scanner(System.in);
     
     public void Login_admin()
