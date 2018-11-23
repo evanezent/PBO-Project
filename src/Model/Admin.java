@@ -65,6 +65,21 @@ public class Admin implements MenuTambahan{
             if (panitia.get(i).getUser_panitia().equals(u) && panitia.get(i).getPasw_panitia().equals(p)) return true;
             else return false;
     }
+
+    @Override
+    public void tambah() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void hapus() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void tampil() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
  
