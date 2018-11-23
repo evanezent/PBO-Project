@@ -21,16 +21,8 @@ public class Admin implements MenuTambahan{
         };
     }
     
-    public void tambah()
+    public void tambah(String nama,String user,String pasw)
     {
-        String nama, user, pasw;
-        System.out.print("Nama Panitia : ");
-        nama = input.nextLine();
-        System.out.print("Username     : ");
-        user = input.nextLine();
-        System.out.print("Password     : ");
-        pasw = input.nextLine();
-        
         panitia.add(new Panitia(nama,user,pasw));
         
     }
@@ -48,27 +40,18 @@ public class Admin implements MenuTambahan{
         }
     }
 
-    public void hapus() {
-        String x;
-        System.out.print("Masukan user yg Ingin di Hapus : ");
-        x = input.nextLine();
+    public void hapus(String user) {
         int i =0;
-        while (i<=panitia.size() && !panitia.get(i).getUser_panitia().equals(x))
+        while (i<=panitia.size() && !panitia.get(i).getUser_panitia().equals(user))
         {
             i++;
         }
         panitia.remove(i);
     }
     
-    public boolean login_panitia()
+    public boolean login_panitia(String u,String p)
     {
         int i=0;
-            
-            String p,u;
-            System.out.print("Username : ");
-            u = input.nextLine();
-            System.out.print("Password : ");
-            p = input.nextLine();
             do
             {
                 i++;
