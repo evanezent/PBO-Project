@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package Controller;
-
+import Model.*;
+import View.*;
 /**
  *
  * @author esber
  */
 public class ControllerAdmin {
-    
+    private View.GuiAdmin viewAdmin;
+    private Model.Admin modelAdmin;
 }

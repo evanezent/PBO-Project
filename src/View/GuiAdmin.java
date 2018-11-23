@@ -40,7 +40,7 @@ public class GuiAdmin extends javax.swing.JFrame {
         tfPw = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        ListNama = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -73,7 +73,7 @@ public class GuiAdmin extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
         jLabel6.setText("Data Panitia");
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(ListNama);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -261,6 +261,7 @@ public class GuiAdmin extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> ListNama;
     private javax.swing.JButton addBtn1;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton jButton1;
@@ -271,7 +272,6 @@ public class GuiAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

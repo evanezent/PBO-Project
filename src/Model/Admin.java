@@ -31,12 +31,18 @@ public class Admin implements MenuTambahan{
         return panitia;
     }
     
-    public void tampil()
+    public void tampil(Panitia p)
+    {        
+        System.out.println(p.getNama_panitia());
+        System.out.println(p.getUser_panitia());
+        System.out.println(p.getUser_panitia());
+        
+    }
+    
+    public void tampilnama()
     {
         for (Panitia p : panitia){          
             System.out.println(p.getNama_panitia());
-            System.out.println(p.getUser_panitia());
-            System.out.println(p.getUser_panitia());
         }
     }
 
