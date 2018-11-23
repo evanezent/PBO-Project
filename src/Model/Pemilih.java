@@ -51,5 +51,12 @@ public class Pemilih {
         this.alamat = alamat;
     }
     
-    
+    public String tampilPemilih()
+    {
+        String data = "Nama : "+nama_pemilih+"\n"
+                     +"Nomor Ktp : "+noKtp+"\n"
+                     +"Alamat : "+alamat+"\n"
+                     +"Tanggal Lahir : "+tanggal_lahir;
+        return data;
+    }
 }

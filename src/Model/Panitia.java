@@ -9,7 +9,7 @@ import java.util.*;
  *
  * @author TamaBarbar
  */
-public class Panitia extends Keperluan {
+public class Panitia {
     private String nama_panitia, user_panitia, pasw_panitia;
     List<Pemilih> pemilih = new ArrayList();
     List<Kandidat> kandidat = new ArrayList();
@@ -62,14 +62,12 @@ public class Panitia extends Keperluan {
         pemilih.remove(i);
     }
     
-    public void tampil()
+    public String tampilPanitia()
     {
-        for (Pemilih p : pemilih){          
-            System.out.println(p.getNama_pemilih());
-            System.out.println(p.getNoKtp());
-            System.out.println(p.getTanggal_lahir());
-            System.out.println(p.getAlamat());
-        }
+        String s = "Nama : "+nama_panitia+"\n"
+                + "Username : "+user_panitia+"\n"
+                + "Password : "+pasw_panitia+"\n";
+        return s;
     }
     //KANDIDAT
     public void addKandidat(String ketua,String wakil,String partai, int no_urut)
@@ -99,13 +97,4 @@ public class Panitia extends Keperluan {
         
     }
 
-    @Override
-    public void tambah() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void hapus() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

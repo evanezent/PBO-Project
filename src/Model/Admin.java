@@ -4,12 +4,11 @@ import java.util.*;
  *
  * @author TamaBarbar
  */
-public class Admin implements MenuTambahan{
+public class Admin{
     private String username_admin = "a"; 
     private String password_admin = "a";
     private List<Panitia> panitia = new ArrayList();
     int idx;
-    //aaaksodaksodkaodksaaaaa
     Scanner input = new Scanner(System.in);
     
     public void Login_admin()
@@ -28,31 +27,15 @@ public class Admin implements MenuTambahan{
         
     }
     
-    public List<Panitia> getPanitia() {
-        return panitia;
+    public String Tampil(int idx){
+        String s = "Nama : "+panitia.get(idx).getNama_panitia()+"\n"
+                 +"Username : "+panitia.get(idx).getUser_panitia()+"\n"
+                 +"Password : "+panitia.get(idx).getPasw_panitia();
+        return s;
     }
     
-    public void tampil(Panitia p)
-    {        
-        System.out.println(p.getNama_panitia());
-        System.out.println(p.getUser_panitia());
-        System.out.println(p.getUser_panitia());
-        
-    }
-    
-    public void tampilnama()
-    {
-        for (Panitia p : panitia){          
-            System.out.println(p.getNama_panitia());
-        }
-    }
 
-    public void hapus(String user) {
-        int i =0;
-        while (i<=panitia.size() && !panitia.get(i).getUser_panitia().equals(user))
-        {
-            i++;
-        }
+    public void hapus(int i) {
         panitia.remove(i);
     }
     
@@ -65,21 +48,6 @@ public class Admin implements MenuTambahan{
             }while (i<=panitia.size() && !panitia.get(i).getUser_panitia().equals(u) || !panitia.get(i).getPasw_panitia().equals(p));
             if (panitia.get(i).getUser_panitia().equals(u) && panitia.get(i).getPasw_panitia().equals(p)) return true;
             else return false;
-    }
-
-    @Override
-    public void tambah() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void hapus() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void tampil() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
