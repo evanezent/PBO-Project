@@ -1,5 +1,8 @@
 package View;
 
+import javax.swing.*;
+import java.awt.event.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -33,11 +36,11 @@ public class LoginAdmin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        uPemilih = new javax.swing.JTextField();
-        pPemilih = new javax.swing.JPasswordField();
-        loginPemilih = new javax.swing.JButton();
-        LPemilih = new javax.swing.JButton();
-        LAdmin = new javax.swing.JButton();
+        tf_uAdmin = new javax.swing.JTextField();
+        tf_pAdmin = new javax.swing.JPasswordField();
+        btnLoginAdmin = new javax.swing.JButton();
+        L_asPemilih = new javax.swing.JButton();
+        L_asPanitia = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,39 +51,39 @@ public class LoginAdmin extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setText("Login Sebagai Pemilih");
+        jLabel2.setText("Login Sebagai Admin");
 
         jLabel3.setText("Username");
 
         jLabel4.setText("Password");
 
-        uPemilih.addActionListener(new java.awt.event.ActionListener() {
+        tf_uAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                uPemilihActionPerformed(evt);
+                tf_uAdminActionPerformed(evt);
             }
         });
 
-        pPemilih.addActionListener(new java.awt.event.ActionListener() {
+        tf_pAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pPemilihActionPerformed(evt);
+                tf_pAdminActionPerformed(evt);
             }
         });
 
-        loginPemilih.setText("Login");
-        loginPemilih.addActionListener(new java.awt.event.ActionListener() {
+        btnLoginAdmin.setText("Login");
+        btnLoginAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginPemilihActionPerformed(evt);
+                btnLoginAdminActionPerformed(evt);
             }
         });
 
-        LPemilih.setText("Login Sebagai Pemilih");
-        LPemilih.addActionListener(new java.awt.event.ActionListener() {
+        L_asPemilih.setText("Login Sebagai Pemilih");
+        L_asPemilih.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LPemilihActionPerformed(evt);
+                L_asPemilihActionPerformed(evt);
             }
         });
 
-        LAdmin.setText("Login Sebagai Admin");
+        L_asPanitia.setText("Login Sebagai Panitia");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -96,25 +99,22 @@ public class LoginAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(loginPemilih)
-                        .addGap(193, 193, 193))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(LAdmin)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LPemilih)))
+                .addComponent(L_asPanitia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(L_asPemilih)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(uPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLoginAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_uAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_pAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(126, 126, 126))
         );
         jPanel2Layout.setVerticalGroup(
@@ -126,18 +126,18 @@ public class LoginAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(uPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_uAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_pAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(29, 29, 29)
-                .addComponent(loginPemilih)
-                .addGap(77, 77, 77)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLoginAdmin)
+                .addGap(100, 100, 100)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LPemilih)
-                    .addComponent(LAdmin))
+                    .addComponent(L_asPemilih)
+                    .addComponent(L_asPanitia))
                 .addContainerGap())
         );
 
@@ -155,68 +155,68 @@ public class LoginAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LPemilihActionPerformed
+    private void L_asPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L_asPemilihActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LPemilihActionPerformed
+    }//GEN-LAST:event_L_asPemilihActionPerformed
 
-    private void loginPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginPemilihActionPerformed
+    private void btnLoginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginPemilihActionPerformed
+    }//GEN-LAST:event_btnLoginAdminActionPerformed
 
-    private void uPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uPemilihActionPerformed
+    private void tf_uAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_uAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_uPemilihActionPerformed
+    }//GEN-LAST:event_tf_uAdminActionPerformed
 
-    private void pPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pPemilihActionPerformed
+    private void tf_pAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_pAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pPemilihActionPerformed
+    }//GEN-LAST:event_tf_pAdminActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginPanitia().setVisible(true);
-            }
-        });
+    //Get TextField
+    
+    public String getTf_pAdmin() {
+        return tf_pAdmin.getText();
     }
 
+    
+    public String getTf_uAdmin() {
+        return tf_uAdmin.getText();
+    }    
+    
+    //Listener and Adapter
+    public void listenerLoginAdmin(ActionListener AL)
+    {
+        btnLoginAdmin.addActionListener(AL);
+        L_asPanitia.addActionListener(AL);
+        L_asPemilih.addActionListener(AL);
+    }
+    
+    //Get Button
+    
+    public JButton getL_asPanitia() {
+        return L_asPanitia;
+    }
+
+    public JButton getL_asPemilih() {
+        return L_asPemilih;
+    }
+
+    //Get Button
+    public JButton getBtnLoginAdmin() {
+        return btnLoginAdmin;
+    }    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton LAdmin;
-    private javax.swing.JButton LPemilih;
+    private javax.swing.JButton L_asPanitia;
+    private javax.swing.JButton L_asPemilih;
+    private javax.swing.JButton btnLoginAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton loginPemilih;
-    private javax.swing.JPasswordField pPemilih;
-    private javax.swing.JTextField uPemilih;
+    private javax.swing.JPasswordField tf_pAdmin;
+    private javax.swing.JTextField tf_uAdmin;
     // End of variables declaration//GEN-END:variables
 }
