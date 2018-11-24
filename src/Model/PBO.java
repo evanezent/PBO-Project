@@ -17,7 +17,7 @@ public class PBO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Controller.ControllerLoginAdmin();
+        new Controller.ControllerAdmin();
     }
     
 }

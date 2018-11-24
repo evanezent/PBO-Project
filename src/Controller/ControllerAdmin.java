@@ -16,6 +16,7 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
     private View.GuiAdmin guiAdmin;
     private Model.Admin modelAdmin;
     private List<Model.Panitia> panitia;
+    private View.GuiEditPanitia EP;
 
     //Coment
     public ControllerAdmin() {
@@ -61,11 +62,29 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
         }
         else if (src.equals(guiAdmin.getEditPanitia()))
         {
-            
+            EP = new View.GuiEditPanitia();
+            EP.ListenerEditPanitia(this);
+            EP.setVisible(true);
+//            int idx = guiAdmin.getSelectedPanitia();
+//            Object o = e.getSource();
+//            if (o.equals(EP.getBtnDone()))
+//            {
+//                String n = EP.getTxNama();
+//                String u = EP.getTxUser();
+//                String p = EP.getTxPass();
+//                Panitia X = new Panitia(n,u,p);
+//                panitia.set(idx, X);
+//                EP.dispose();
+//            }
+//            else
+//            {
+//                EP.dispose();
+//            }
         }
         
     }
-
+    
+    
     @Override
     public void mousePressed(MouseEvent e) {
         Object o = e.getSource();
