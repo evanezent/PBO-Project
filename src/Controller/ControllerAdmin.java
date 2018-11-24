@@ -17,6 +17,7 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
     private Model.Admin modelAdmin;
     private List<Model.Panitia> panitia;
 
+    //Coment
     public ControllerAdmin() {
         guiAdmin = new View.GuiAdmin();
         modelAdmin = new Model.Admin();
