@@ -20,4 +20,7 @@ public class ControllerEditPanitia extends MouseAdapter implements ActionListene
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    //simpen ke ArrayList<Panitita>
+    
+    //get ArrayList<Panitia>
 }

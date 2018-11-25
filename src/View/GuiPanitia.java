@@ -13,12 +13,12 @@ import java.awt.event.*;
  *
  * @author esber
  */
-public class GuiMenuPanitia extends javax.swing.JFrame {
+public class GuiPanitia extends javax.swing.JFrame {
 
     /**
      * Creates new form GuiMenuPanitia
      */
-    public GuiMenuPanitia() {
+    public GuiPanitia() {
         initComponents();
     }
 

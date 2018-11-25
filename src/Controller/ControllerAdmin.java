@@ -8,6 +8,7 @@ import Model.*;
 import View.*;
 import java.util.*;
 import java.awt.event.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author esber
@@ -63,23 +64,20 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
         else if (src.equals(guiAdmin.getEditPanitia()))
         {
             EP = new View.GuiEditPanitia();
-            EP.ListenerEditPanitia(this);
+            EP.getBtnDone().addActionListener(this);
             EP.setVisible(true);
-//            int idx = guiAdmin.getSelectedPanitia();
-//            Object o = e.getSource();
-//            if (o.equals(EP.getBtnDone()))
-//            {
-//                String n = EP.getTxNama();
-//                String u = EP.getTxUser();
-//                String p = EP.getTxPass();
-//                Panitia X = new Panitia(n,u,p);
-//                panitia.set(idx, X);
-//                EP.dispose();
-//            }
-//            else
-//            {
-//                EP.dispose();
-//            }
+            Object o = e.getSource();
+            if (o.equals(EP.getBtnDone()))
+            {
+                JOptionPane.showMessageDialog(null, "OKE");
+            }
+            
+            
+            
+            //ControllerEditPanitia ep = new Controller();
+            //temppanitia = ep.getArrayList();
+            //list.remove(idx)
+            //list.add(idx,temppanitia)
         }
         
     }
