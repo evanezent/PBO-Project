@@ -12,6 +12,7 @@ package Controller;
 public class Control {
 
     public Control() {
+        //commnet
     }
        
 }
