@@ -22,5 +22,5 @@ public class ControllerEditPanitia extends MouseAdapter implements ActionListene
     
     //simpen ke ArrayList<Panitita>
     
-    //get ArrayList<Panitia>
+    //get ArrayList<Panitia>//
 }

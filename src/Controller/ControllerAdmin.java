@@ -74,10 +74,6 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
             
             
             
-            //ControllerEditPanitia ep = new Controller();
-            //temppanitia = ep.getArrayList();
-            //list.remove(idx)
-            //list.add(idx,temppanitia)
         }
         
     }
