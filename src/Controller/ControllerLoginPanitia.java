@@ -19,7 +19,6 @@ public class ControllerLoginPanitia extends MouseAdapter implements ActionListen
 
     public ControllerLoginPanitia() {
         gui = new View.LoginPanitia();
-        admin = new ControllerAdmin();
         gui.ListenerLogPanitia(this);
         gui.setVisible(true);
     }
