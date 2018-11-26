@@ -38,16 +38,20 @@ public class ControllerLoginPemilih extends MouseAdapter implements ActionListen
                 {
                     new ControllerPemilih();
                 }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
+                }
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
+                JOptionPane.showMessageDialog(null, "USER KOSONG");
             }
         }
         else if (src.equals(gui.getL_Admin()))
         {
             new ControllerLoginAdmin();
-            gui.setVisible(false);
+            gui.dispose();
         }
         else if (src.equals(gui.getL_Panitia()))
         {
