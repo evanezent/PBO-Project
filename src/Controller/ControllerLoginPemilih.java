@@ -29,13 +29,15 @@ public class ControllerLoginPemilih extends MouseAdapter implements ActionListen
         {
             String nik = gui.getTfNIK();
             int i =0;
-            while (i<CP.getPemilih().size() && (!nik.equals(CP.getPemilih().get(i).getNoKtp())))
-            {
-                i++;
-            }
-            if (nik.equals(CP.getPemilih().get(i).getNoKtp()))
-            {
-                new ControllerPemilih();
+            if (CP.getPemilih().size() != 0){
+                while (i<CP.getPemilih().size() && (!nik.equals(CP.getPemilih().get(i).getNoKtp())))
+                {
+                    i++;
+                }
+                if (nik.equals(CP.getPemilih().get(i).getNoKtp()))
+                {
+                    new ControllerPemilih();
+                }
             }
             else
             {
