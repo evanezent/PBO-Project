@@ -36,7 +36,7 @@ public class ControllerLoginAdmin extends MouseAdapter implements ActionListener
         }
         else if(src.equals(gui.getL_asPanitia())){
             new ControllerLoginPanitia();
-            gui.setVisible(false);
+            gui.dispose();
         }
         else if (src.equals(gui.getL_asPemilih()))
         {
