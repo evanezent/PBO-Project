@@ -8,19 +8,53 @@ import Model.*;
 import View.*;
 import java.util.*;
 import java.awt.event.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author esber
  */
 public class ControllerEditPanitia extends MouseAdapter implements ActionListener {
+    
+    private List<Model.Panitia> panitia;
+    private View.GuiEditPanitia gui;
+    private int idx;
 
+    public ControllerEditPanitia(int idx) {
+        
+        this.idx = idx;
+        gui = new View.GuiEditPanitia();
+        panitia = new ArrayList();
+        gui.AdapterEditPanitia(this);
+        gui.ListenerEditPanitia(this);
+        gui.setVisible(true);
+    }
+    
+        //Get List Panitia
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object src = e.getSource();
+        
+        if (src.equals(gui.getBtnDone()))
+        {
+            String nama = gui.getTxNama();
+            String user = gui.getTxUser();
+            String pass = gui.getTxPass();
+            Panitia p = new Panitia(user,nama,pass);
+            panitia.add(p);
+            gui.dispose();
+        }
+        else
+        {
+            gui.dispose();
+        }
     }
-    
+
     //simpen ke ArrayList<Panitita>
     
     //get ArrayList<Panitia>//
+
+    public Panitia getPanitia() {
+        return panitia.get(idx);
+    }
 }

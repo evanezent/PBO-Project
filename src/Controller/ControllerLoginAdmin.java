@@ -12,12 +12,11 @@ import java.awt.event.*;
  * @author esber
  */
 public class ControllerLoginAdmin extends MouseAdapter implements ActionListener {
-    View.LoginAdmin gui;
-    Model.Admin admin;
+    View.LoginAdmin gui = new View.LoginAdmin();;
+    Model.Admin admin = new Model.Admin();
 
     public ControllerLoginAdmin() {
-        gui = new View.LoginAdmin();
-        admin = new Model.Admin();
+
         gui.listenerLoginAdmin(this);
         gui.setVisible(true);
     }
@@ -32,12 +31,17 @@ public class ControllerLoginAdmin extends MouseAdapter implements ActionListener
             if (user.equals(admin.getUsername_admin()) && pass.equals(admin.getPassword_admin()))
             {
                 new ControllerAdmin();
-                gui.setVisible(false);
+                gui.dispose();
             }
         }
         else if(src.equals(gui.getL_asPanitia())){
-            new ControllerPanitia();
+            new ControllerLoginPanitia();
             gui.setVisible(false);
+        }
+        else if (src.equals(gui.getL_asPemilih()))
+        {
+            new ControllerLoginPemilih();
+            gui.dispose();
         }
     }
     

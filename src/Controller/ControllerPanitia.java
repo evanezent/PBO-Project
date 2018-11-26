@@ -14,12 +14,19 @@ import java.awt.event.*;
  * @author esber
  */
 public class ControllerPanitia extends MouseAdapter implements ActionListener {
-    private View.GuiPanitia guiPanitia;
+    private View.GuiMenuPanitia guiPanitia;
     private Model.Panitia modelPanitia;
     private List<Model.Panitia> panitia;
+    private List<Model.Pemilih> pemilih = new ArrayList();
 
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public List<Pemilih> getPemilih() {
+        return pemilih;
+    }
+    
+    
 }

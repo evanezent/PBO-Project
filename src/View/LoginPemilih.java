@@ -1,5 +1,9 @@
 package View;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.event.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -32,10 +36,10 @@ public class LoginPemilih extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        nikPemilih = new javax.swing.JPasswordField();
-        pilihPemilih = new javax.swing.JButton();
-        LPemilih = new javax.swing.JButton();
-        LAdmin = new javax.swing.JButton();
+        L_Pemilih = new javax.swing.JButton();
+        L_Panitia = new javax.swing.JButton();
+        L_Admin = new javax.swing.JButton();
+        tfNIK = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,27 +54,21 @@ public class LoginPemilih extends javax.swing.JFrame {
 
         jLabel4.setText("NIK");
 
-        nikPemilih.addActionListener(new java.awt.event.ActionListener() {
+        L_Pemilih.setText("Masuk");
+        L_Pemilih.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nikPemilihActionPerformed(evt);
+                L_PemilihActionPerformed(evt);
             }
         });
 
-        pilihPemilih.setText("Masuk");
-        pilihPemilih.addActionListener(new java.awt.event.ActionListener() {
+        L_Panitia.setText("Login Sebagai Panitia");
+        L_Panitia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pilihPemilihActionPerformed(evt);
+                L_PanitiaActionPerformed(evt);
             }
         });
 
-        LPemilih.setText("Login Sebagai Pemilih");
-        LPemilih.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LPemilihActionPerformed(evt);
-            }
-        });
-
-        LAdmin.setText("Login Sebagai Admin");
+        L_Admin.setText("Login Sebagai Admin");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -82,20 +80,22 @@ public class LoginPemilih extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LAdmin)
+                .addComponent(L_Admin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LPemilih)
+                .addComponent(L_Panitia)
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(178, 178, 178)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pilihPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(L_Pemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nikPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50))
+                            .addComponent(tfNIK))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -105,16 +105,16 @@ public class LoginPemilih extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addGap(32, 32, 32)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nikPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(tfNIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pilihPemilih)
+                .addComponent(L_Pemilih)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LPemilih)
-                    .addComponent(LAdmin))
+                    .addComponent(L_Panitia)
+                    .addComponent(L_Admin))
                 .addContainerGap())
         );
 
@@ -132,63 +132,49 @@ public class LoginPemilih extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LPemilihActionPerformed
+    private void L_PanitiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L_PanitiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LPemilihActionPerformed
+    }//GEN-LAST:event_L_PanitiaActionPerformed
 
-    private void pilihPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihPemilihActionPerformed
+    private void L_PemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L_PemilihActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pilihPemilihActionPerformed
+    }//GEN-LAST:event_L_PemilihActionPerformed
 
-    private void nikPemilihActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nikPemilihActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nikPemilihActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new LoginPemilih().setVisible(true);
-            }
-        });
+    
+    //Get Button
+    
+    public JButton getL_Admin() {
+        return L_Admin;
     }
 
+    public JButton getL_Panitia() {
+        return L_Panitia;
+    }
+
+    public JButton getL_Pemilih() {
+        return L_Pemilih;
+    }    
+    
+    //Get Text 
+
+    public String getTfNIK() {
+        return tfNIK.getText();
+    }
+
+    public void ListenerLogPemilih(ActionListener A)
+    {
+        L_Admin.addActionListener(A);
+        L_Panitia.addActionListener(A);
+        L_Pemilih.addActionListener(A);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton LAdmin;
-    private javax.swing.JButton LPemilih;
+    private javax.swing.JButton L_Admin;
+    private javax.swing.JButton L_Panitia;
+    private javax.swing.JButton L_Pemilih;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField nikPemilih;
-    private javax.swing.JButton pilihPemilih;
+    private javax.swing.JTextField tfNIK;
     // End of variables declaration//GEN-END:variables
 }

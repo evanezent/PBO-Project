@@ -14,16 +14,15 @@ import javax.swing.JOptionPane;
  * @author esber
  */
 public class ControllerAdmin extends MouseAdapter implements ActionListener {
-    private View.GuiAdmin guiAdmin;
-    private Model.Admin modelAdmin;
-    private List<Model.Panitia> panitia;
+    
+    private View.GuiAdmin guiAdmin = new View.GuiAdmin();;
+    private Model.Admin modelAdmin = new Model.Admin();
+    private List<Model.Panitia> panitia = new ArrayList();
     private View.GuiEditPanitia EP;
 
     //Coment
     public ControllerAdmin() {
-        guiAdmin = new View.GuiAdmin();
-        modelAdmin = new Model.Admin();
-        panitia = new ArrayList();
+
         guiAdmin.AdminAdapter(this);
         guiAdmin.AdminListener(this);
         guiAdmin.setVisible(true);
@@ -62,18 +61,19 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
             
         }
         else if (src.equals(guiAdmin.getEditPanitia()))
+        {   
+            int idx = guiAdmin.getSelectedPanitia();
+            ControllerEditPanitia CEP = new ControllerEditPanitia(idx);
+            Panitia p = CEP.getPanitia();
+            panitia.remove(idx);
+            panitia.add(idx, p);
+            guiAdmin.ResetShowAdmin();
+            guiAdmin.setListPanitia(getDataPanitia());
+        }
+        else if (src.equals(guiAdmin.getBtnHome()))
         {
-            EP = new View.GuiEditPanitia();
-            EP.getBtnDone().addActionListener(this);
-            EP.setVisible(true);
-            Object o = e.getSource();
-            if (o.equals(EP.getBtnDone()))
-            {
-                JOptionPane.showMessageDialog(null, "OKE");
-            }
-            
-            
-            
+            new ControllerLoginAdmin();
+            guiAdmin.dispose();
         }
         
     }
@@ -89,6 +89,11 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
             guiAdmin.setTextPanitia(p.tampilPanitia());
         }
     }
+
+    public List<Panitia> getPanitia() {
+        return panitia;
+    }
+    
     
     
 }

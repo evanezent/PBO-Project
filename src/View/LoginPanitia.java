@@ -1,5 +1,10 @@
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -168,42 +173,39 @@ public class LoginPanitia extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pPanitiaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginPanitia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginPanitia().setVisible(true);
-            }
-        });
+    //Button
+    
+    public JButton getLAdmin() {
+        return LAdmin;
     }
 
+    public JButton getLPemilih() {
+        return LPemilih;
+    }
+
+    public JButton getLoginPanitia() {
+        return loginPanitia;
+    }
+
+    //get Text
+    
+    public String getpPanitia() {
+        return pPanitia.getText();
+    }
+
+    public String getuPanitia() {
+        return uPanitia.getText();
+    }
+    
+    //Listener
+    public void ListenerLogPanitia(ActionListener A)
+    {
+        loginPanitia.addActionListener(A);
+        LPemilih.addActionListener(A);
+        LAdmin.addActionListener(A);
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LAdmin;
     private javax.swing.JButton LPemilih;

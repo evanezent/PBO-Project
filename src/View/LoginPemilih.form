@@ -52,21 +52,24 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="LAdmin" min="-2" max="-2" attributes="0"/>
+                  <Component id="L_Admin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="LPemilih" min="-2" max="-2" attributes="0"/>
+                  <Component id="L_Panitia" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="pilihPemilih" alignment="1" min="-2" pref="67" max="-2" attributes="0"/>
+                      <Component id="L_Pemilih" alignment="1" min="-2" pref="67" max="-2" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" pref="133" max="-2" attributes="0"/>
-                              <Component id="nikPemilih" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel2" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="tfNIK" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -81,17 +84,17 @@
                   <Component id="jLabel1" min="-2" pref="80" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="nikPemilih" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfNIK" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="pilihPemilih" min="-2" max="-2" attributes="0"/>
+                  <Component id="L_Pemilih" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="118" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LPemilih" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="L_Panitia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="L_Admin" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -119,31 +122,28 @@
             <Property name="text" type="java.lang.String" value="NIK"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="nikPemilih">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nikPemilihActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="pilihPemilih">
+        <Component class="javax.swing.JButton" name="L_Pemilih">
           <Properties>
             <Property name="text" type="java.lang.String" value="Masuk"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pilihPemilihActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="L_PemilihActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="LPemilih">
+        <Component class="javax.swing.JButton" name="L_Panitia">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Login Sebagai Pemilih"/>
+            <Property name="text" type="java.lang.String" value="Login Sebagai Panitia"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LPemilihActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="L_PanitiaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="LAdmin">
+        <Component class="javax.swing.JButton" name="L_Admin">
           <Properties>
             <Property name="text" type="java.lang.String" value="Login Sebagai Admin"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tfNIK">
         </Component>
       </SubComponents>
     </Container>
