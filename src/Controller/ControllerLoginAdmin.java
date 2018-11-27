@@ -7,6 +7,8 @@ package Controller;
 import View.*;
 import Model.*;
 import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
 /**
  *
  * @author esber
@@ -32,6 +34,10 @@ public class ControllerLoginAdmin extends MouseAdapter implements ActionListener
             {
                 new ControllerAdmin();
                 gui.dispose();
+            }
+            else 
+            {
+                JOptionPane.showMessageDialog(null, "Wrong Username / Password");
             }
         }
         else if(src.equals(gui.getL_asPanitia())){
