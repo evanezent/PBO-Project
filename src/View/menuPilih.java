@@ -28,10 +28,15 @@ public class menuPilih extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        KandidatBtnGroup = new javax.swing.ButtonGroup();
         jPanel6 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         pilihPemilih = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
+        Kandidat2btn = new javax.swing.JRadioButton();
+        Kandidat1btn = new javax.swing.JRadioButton();
+        Kandidat3btn = new javax.swing.JRadioButton();
+        Kandidat4btn = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,6 +57,18 @@ public class menuPilih extends javax.swing.JFrame {
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        KandidatBtnGroup.add(Kandidat2btn);
+        Kandidat2btn.setText("Kandidat 2");
+
+        KandidatBtnGroup.add(Kandidat1btn);
+        Kandidat1btn.setText("Kandidat 1");
+
+        KandidatBtnGroup.add(Kandidat3btn);
+        Kandidat3btn.setText("Kandidat 3");
+
+        KandidatBtnGroup.add(Kandidat4btn);
+        Kandidat4btn.setText("Kandidat 4");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -69,7 +86,17 @@ public class menuPilih extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(Kandidat1btn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Kandidat2btn))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(Kandidat3btn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Kandidat4btn)))
+                .addGap(80, 80, 80))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +104,16 @@ public class menuPilih extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel17)
                 .addGap(2, 2, 2)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Kandidat2btn)
+                            .addComponent(Kandidat1btn))
+                        .addGap(96, 96, 96)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Kandidat3btn)
+                            .addComponent(Kandidat4btn)))
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(pilihPemilih)
                 .addGap(20, 20, 20))
@@ -149,6 +185,11 @@ public class menuPilih extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton Kandidat1btn;
+    private javax.swing.JRadioButton Kandidat2btn;
+    private javax.swing.JRadioButton Kandidat3btn;
+    private javax.swing.JRadioButton Kandidat4btn;
+    private javax.swing.ButtonGroup KandidatBtnGroup;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel1;

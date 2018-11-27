@@ -12,7 +12,7 @@ package Controller;
 public class Control {
 
     public Control() {
-        //commnet
+        //commnet // gajelas lu tam
     }
        
 }
