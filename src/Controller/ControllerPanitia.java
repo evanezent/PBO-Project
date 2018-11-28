@@ -22,7 +22,7 @@ public class ControllerPanitia extends MouseAdapter implements ActionListener {
     private List<Kandidat> kandidat = new ArrayList();
     private DefaultTableModel tab = new DefaultTableModel();
 
-    
+    //gabisa jalan
     public ControllerPanitia() {
         
         guiPanitia.TabAdapter(this);
