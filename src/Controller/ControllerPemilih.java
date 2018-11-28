@@ -10,5 +10,4 @@ package Controller;
  * @author esber
  */
 public class ControllerPemilih {
-    
 }
