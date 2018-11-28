@@ -8,6 +8,7 @@ import Model.*;
 import View.*;
 import java.util.*;
 import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,13 +16,61 @@ import java.awt.event.*;
  */
 public class ControllerPanitia extends MouseAdapter implements ActionListener {
     private View.GuiMenuPanitia guiPanitia;
-    private Model.Panitia modelPanitia;
-    private List<Model.Panitia> panitia;
-    private List<Model.Pemilih> pemilih = new ArrayList();
+    private Panitia modelPanitia;
+    private List<Panitia> panitia = new ArrayList();
+    private List<Pemilih> pemilih = new ArrayList();
+    private List<Kandidat> kandidat = new ArrayList();
+    private DefaultTableModel tab = new DefaultTableModel();
 
+    
+    public ControllerPanitia() {
+        
+        guiPanitia.TabAdapter(this);
+        guiPanitia.TabListener(this);
+        guiPanitia.setVisible(true);
+    }
+    
+    
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object src = e.getSource();
+        if (src.equals(guiPanitia.getAddKandidat_btn()))
+        {
+            String ketua = guiPanitia.getTf_KandidatKetua();
+            String wakil = guiPanitia.getTf_KandidatWakil();
+            String numb = guiPanitia.getTf_KandidatNomor();
+            Kandidat k = new Kandidat(ketua, wakil, numb);
+            kandidat.add(k);
+            tab.addRow(new Object[]{numb,ketua,wakil});
+            guiPanitia.resetKandidat();
+            
+        }
+        else if (src.equals(guiPanitia.getDelPemilih_btn()))
+        {
+            int idx = guiPanitia.row_Kandidat();
+            kandidat.remove(idx);
+            tab.removeRow(idx);
+        }
+        else if(src.equals(guiPanitia.getAddPemilih_btn()))
+        {
+            String nama = guiPanitia.getTf_NamaPemilih();
+            String no = guiPanitia.getTf_KTPPemilih();
+            String ttl = guiPanitia.getTf_TTLPemilih();
+            String alamat = guiPanitia.getTf_AlamatPemilih();
+            Pemilih p = new Pemilih(nama, no, ttl, alamat);
+            pemilih.add(p);
+            tab.addRow(new Object[]{nama,no,ttl,alamat});
+            guiPanitia.resetPemiilih();
+        }
+        else if (src.equals(guiPanitia.getDelPemilih_btn()))
+        {
+            int idx = guiPanitia.row_Pemilih();
+            pemilih.remove(idx);
+            tab.removeRow(idx);
+            
+        }
+        
     }
 
     public List<Pemilih> getPemilih() {

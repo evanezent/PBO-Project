@@ -10,15 +10,15 @@ import java.util.*;
  * @author TamaBarbar
  */
 public class Kandidat {
-    private String nama_ketua,nama_wakil;
-    private int no_urut,jumlahSuara;
-    Partai partai;
+    private String no_urut,nama_ketua,nama_wakil;
+    private int jumlahSuara;
+    private byte[] img;
 
-    public Kandidat(String nama_ketua, String nama_wakil, int no_urut, String partai) {
+    public Kandidat(String nama_ketua, String nama_wakil, String no_urut) {
         this.nama_ketua = nama_ketua;
         this.nama_wakil = nama_wakil;
         this.no_urut = no_urut;
-        this.partai = new Partai(partai);
+  
     }
 
     public String getNama_ketua() {
@@ -37,20 +37,21 @@ public class Kandidat {
         this.nama_wakil = nama_wakil;
     }
 
-    public int getNo_urut() {
+    public String getNo_urut() {
         return no_urut;
     }
 
-    public void setNo_urut(int no_urut) {
+    public void setNo_urut(String no_urut) {
         this.no_urut = no_urut;
     }
 
-    public Partai getPartai() {
-        return partai;
+    public byte[] getImg() {
+        return img;
     }
 
-    public void setPartai(Partai partai) {
-        this.partai = partai;
+    public void setImg(byte[] img) {
+        this.img = img;
     }
+
 
 }

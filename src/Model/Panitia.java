@@ -55,11 +55,7 @@ public class Panitia {
     
     public void hapus(String noKtp)
     {
-        int i =0;
-        while (i<= pemilih.size() && !pemilih.get(i).getNoKtp().equals(noKtp)) {
-            ++i;
-        }
-        pemilih.remove(i);
+
     }
     
     public String tampilPanitia()
@@ -70,19 +66,14 @@ public class Panitia {
         return s;
     }
     //KANDIDAT
-    public void addKandidat(String ketua,String wakil,String partai, int no_urut)
+    public void addKandidat(String ketua,String wakil, String no_urut)
     {
-        kandidat.add(new Kandidat(ketua,wakil,no_urut,partai));
+        kandidat.add(new Kandidat(ketua,wakil,no_urut));
     }
     
     public void hapusKandidat(int noUrut)
         {
-            int i = 0;
-            while (i<=kandidat.size() && kandidat.get(i).getNo_urut() != noUrut)
-            {
-                i++;
-            }
-            kandidat.remove(i);
+
         }
     
     public boolean login_peserta(int noKtp)

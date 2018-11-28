@@ -8,6 +8,7 @@ package View;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -80,26 +81,7 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
 
         TabelPemilih.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Nama", "No. KTP", "Tanggal Lahir", "Alamat"
@@ -200,16 +182,7 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
 
         TabelKandidat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Nomor Urut", "Nama Ketua", "Nama Wakil"
@@ -343,6 +316,8 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     
+    
+    DefaultTableModel model;
     //Get Button
     
     public JButton getAddPemilih_btn() {
@@ -431,8 +406,30 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
     }
     
     //Get Selected Row
+    public int row_Kandidat()
+    {
+        return TabelKandidat.getSelectedRow();
+    }
     
-  
+    public int row_Pemilih()
+    {
+        return TabelPemilih.getSelectedRow();
+    }
+    
+    //Reset
+    public void resetKandidat()
+    {
+        tf_KandidatKetua.setText("");
+        tf_KandidatWakil.setText("");
+        tf_KandidatNomor.setText("");
+    }
+    public void resetPemiilih()
+    {
+        tf_NamaPemilih.setText("");
+        tf_AlamatPemilih.setText("");
+        tf_KTPPemilih.setText("");
+        tf_TTLPemilih.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddKandidat_btn;
