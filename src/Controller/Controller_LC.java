@@ -18,7 +18,8 @@ public class Controller_LC extends MouseAdapter implements ActionListener {
     private List<Kandidat> kandidat = new ArrayList();// isi didapat dari panitia dan pemilih
     private List<Pemilih> pemilih = new ArrayList(); //dapet dr Panitia
     public Controller_LC() {
-        //commnet // gajelas lu tam
+        view.ListenerLC(this);
+        view.setVisible(true);
     }
 
     @Override
