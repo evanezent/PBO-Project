@@ -53,5 +53,13 @@ public class Kandidat {
         this.img = img;
     }
 
+    public int getJumlahSuara() {
+        return jumlahSuara;
+    }
 
+    public void setJumlahSuara() {
+        this.jumlahSuara = this.jumlahSuara+1;
+    }
+
+    
 }

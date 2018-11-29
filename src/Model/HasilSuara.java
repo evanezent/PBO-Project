@@ -13,4 +13,5 @@ public class HasilSuara {
     private List<Kandidat> kandidat = new ArrayList<>();
     
     
+    
 }

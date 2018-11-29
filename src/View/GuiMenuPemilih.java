@@ -1,5 +1,6 @@
 package View;
-
+import java.awt.event.*;
+import javax.swing.*;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -148,41 +149,29 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pilihPemilihActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GuiMenuPemilih.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GuiMenuPemilih.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GuiMenuPemilih.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GuiMenuPemilih.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GuiMenuPemilih().setVisible(true);
-            }
-        });
+    //Get Pilihan
+    public char getPilihan()
+    {
+        if (Kandidat1btn.isSelected()) return '1';
+        else if (Kandidat2btn.isSelected()) return '2';
+        else if (Kandidat3btn.isSelected()) return '3';
+        else if (Kandidat4btn.isSelected()) return '4';
+        else return 'x';
     }
+    
+    //Get Button
+    public JButton getPilihPemilih() {
+        return pilihPemilih;
+    }
+    
+    //Listener dan adapter
+    public void ListenerVoting(ActionListener e)
+    {
+        pilihPemilih.addActionListener(e);
+    }
+    
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Kandidat1btn;

@@ -6,6 +6,7 @@
 package Controller;
 import Model.*;
 import View.*;
+import com.sun.org.apache.xml.internal.security.Init;
 import java.util.*;
 import java.awt.event.*;
 import javax.swing.table.DefaultTableModel;
@@ -20,8 +21,9 @@ public class ControllerPanitia extends MouseAdapter implements ActionListener {
     private List<Panitia> panitia = new ArrayList();
     private List<Pemilih> pemilih = new ArrayList();
     private List<Kandidat> kandidat = new ArrayList();
-    private DefaultTableModel tab = new DefaultTableModel();
-
+    private DefaultTableModel tabK = (DefaultTableModel)guiPanitia.getTabelKandidat().getModel();
+    private DefaultTableModel tabP = (DefaultTableModel)guiPanitia.getTabelPemilih().getModel();
+    
     //gabisa jalan
     public ControllerPanitia() {
         
@@ -42,15 +44,15 @@ public class ControllerPanitia extends MouseAdapter implements ActionListener {
             String numb = guiPanitia.getTf_KandidatNomor();
             Kandidat k = new Kandidat(ketua, wakil, numb);
             kandidat.add(k);
-            tab.addRow(new Object[]{numb,ketua,wakil});
+            tabK.addRow(new Object[]{numb,ketua,wakil});
             guiPanitia.resetKandidat();
             
         }
-        else if (src.equals(guiPanitia.getDelPemilih_btn()))
+        else if (src.equals(guiPanitia.getDelKandidat_btn()))
         {
             int idx = guiPanitia.row_Kandidat();
             kandidat.remove(idx);
-            tab.removeRow(idx);
+            tabK.removeRow(idx);
         }
         else if(src.equals(guiPanitia.getAddPemilih_btn()))
         {
@@ -60,14 +62,14 @@ public class ControllerPanitia extends MouseAdapter implements ActionListener {
             String alamat = guiPanitia.getTf_AlamatPemilih();
             Pemilih p = new Pemilih(nama, no, ttl, alamat);
             pemilih.add(p);
-            tab.addRow(new Object[]{nama,no,ttl,alamat});
+            tabP.addRow(new Object[]{nama,no,ttl,alamat});
             guiPanitia.resetPemiilih();
         }
         else if (src.equals(guiPanitia.getDelPemilih_btn()))
         {
             int idx = guiPanitia.row_Pemilih();
             pemilih.remove(idx);
-            tab.removeRow(idx);
+            tabP.removeRow(idx);
             
         }
         
