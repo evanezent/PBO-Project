@@ -5,8 +5,14 @@
  */
 package Model;
 import java.util.*;
-/**
- *
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import Database.Database;
+import javax.swing.JOptionPane;
+ /*
  * @author TamaBarbar
  */
 public class Panitia {
@@ -45,19 +51,6 @@ public class Panitia {
         this.pasw_panitia = pasw_panitia;
     }
     
-
-    
-
-    public void tambah(String nama, String noKtp,String ttl, String alamat)
-    {
-        pemilih.add(new Pemilih(nama,noKtp,ttl,alamat));
-    }
-    
-    public void hapus(String noKtp)
-    {
-
-    }
-    
     public String tampilPanitia()
     {
         String s = "Nama : "+nama_panitia+"\n"
@@ -65,27 +58,80 @@ public class Panitia {
                 + "Password : "+pasw_panitia+"\n";
         return s;
     }
-    //KANDIDAT
-    public void addKandidat(String ketua,String wakil, String no_urut)
-    {
-        kandidat.add(new Kandidat(ketua,wakil,no_urut));
+    
+        public boolean checkUser(String uname, String pass) throws SQLException{
+        boolean valid = false;
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `Panitia` WHERE `Username` LIKE '"+uname+"'";
+        System.out.println(query);
+        db.setRs(query);
+        if (db.isRsEmpty(db.getRs())) {
+            System.out.println("Username not found");
+        }else {
+            while(db.getRs().next()){
+                if(db.getRs().getString("Password").equals(pass)){
+                    valid = true;
+                }else{
+                    System.out.println("Wrong Password");
+                }
+            }
+        }
+        db.Disconnect();
+        return valid;
     }
     
-    public void hapusKandidat(int noUrut)
-        {
-
-        }
-    
-    public boolean login_peserta(int noKtp)
+    public void insertPanitia(Panitia p) throws SQLException
     {
-        int i =0;
-        while (i<pemilih.size() && !pemilih.get(i).getNoKtp().equals(noKtp));
+        String query = "INSERT INTO `Panitia` VALUES('";
+                        query +=  p.getNama_panitia() +"','";
+                        query +=  p.getUser_panitia() +"','";
+                        query +=  p.getPasw_panitia() +"')";
+        Database db = new Database();
+        db.Connect();
+        System.out.println(query);
+        if (db.Manipulate(query))
         {
-            i++;
-        };
-        if (pemilih.get(i).getNoKtp().equals(noKtp)) return true;
-        else return false;
+            System.out.println("SUCCES");
+        }
+        else
+        {
+            System.out.println("FAILED");
+        }
+                       
+    }
+    
+    public void deletePanitia(Panitia p) throws SQLException
+    {
+        Database db = new Database();
+        db.Connect();
+        String query = "DELETE FROM `Panitia` WHERE `Username` = '"+p.getUser_panitia()+"';";
         
     }
 
+    public List<Panitia> getAllPanitia() throws SQLException
+    {
+        List<Panitia> panitia = new ArrayList();
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `Panitia`";
+        
+        db.setRs(query);
+        if(!db.isRsEmpty(db.getRs()))
+        {
+            ResultSet rs = db.getRs();
+            while(db.getRs().next())
+            {
+                Panitia p = new Panitia(rs.getString("Nama Panitia"),
+                        rs.getString("Username"),
+                        rs.getString("Password"));
+                panitia.add(p);
+            }
+        }
+        else
+        {
+            System.out.println("DATABASE KOSONG");
+        }
+        return panitia;
+    }
 }

@@ -7,6 +7,7 @@ package Model;
 import java.util.*;
 import Controller.*;
 import View.*;
+import java.sql.SQLException;
 /**
  *
  * @author TamaBarbar
@@ -16,7 +17,9 @@ public class PBO {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        
         new ControllerPanitia();
+        
     }
 }

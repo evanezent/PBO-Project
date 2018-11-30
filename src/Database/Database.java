@@ -17,13 +17,8 @@ import java.util.logging.Logger;
  *
  * @author esber
  */
-public class Database {
 
-/**
- *
- * @author TSR
- */
-public class Databasee {
+public class Database {
     private Connection conn = null;
     private Statement stmt = null;
     private ResultSet rs = null;
@@ -33,7 +28,7 @@ public class Databasee {
     public void Connect(){
         //System.out.println("Connecting..");
         try {
-            String url = "";//Database kita
+            String url = "jdbc:mysql://localhost/OOP";//Database kita
             String user = "root";
             String pass = "";
             this.conn = DriverManager.getConnection(url, user, pass);
@@ -101,4 +96,4 @@ public class Databasee {
     }
     
 }
-}
+
