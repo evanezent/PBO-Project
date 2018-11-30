@@ -80,8 +80,8 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
                 .addContainerGap(109, Short.MAX_VALUE)
                 .addComponent(Kandidat1btn)
                 .addGap(174, 174, 174)
-                .addComponent(Kandidat2btn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108))
+                .addComponent(Kandidat2btn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

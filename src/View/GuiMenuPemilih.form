@@ -79,8 +79,8 @@
                   <EmptySpace pref="109" max="32767" attributes="0"/>
                   <Component id="Kandidat1btn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
-                  <Component id="Kandidat2btn" min="-2" pref="77" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                  <Component id="Kandidat2btn" min="-2" pref="99" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
