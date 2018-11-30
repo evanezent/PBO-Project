@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Model;
+import Database.Database;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 /**
  *
@@ -51,12 +54,52 @@ public class Pemilih {
         this.alamat = alamat;
     }
     
-    public String tampilPemilih()
+    
+        public void insertPemilih(Pemilih p)
     {
-        String data = "Nama : "+nama_pemilih+"\n"
-                     +"Nomor Ktp : "+noKtp+"\n"
-                     +"Alamat : "+alamat+"\n"
-                     +"Tanggal Lahir : "+tanggal_lahir;
-        return data;
+        String query = "INSERT INTO `Pemilih` VALUES('";
+                        query +=  p.getNama_pemilih() +"','";
+                        query +=  p.getNoKtp() +"','";
+                        query +=  p.getTanggal_lahir() +"','";
+                        query +=  p.getAlamat()+"')";
+        Database db = new Database();
+        db.Connect();
+        System.out.println(query);
+        if (db.Manipulate(query))
+        {
+            System.out.println("SUCCES");
+        }
+        else
+        {
+            System.out.println("FAILED");
+        }
+                       
+    }
+    
+    public List<Pemilih> getAllPemilih() throws SQLException
+    {
+        List<Pemilih> pemilih = new ArrayList();
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `Pemilih`";
+        
+        db.setRs(query);
+        if(!db.isRsEmpty(db.getRs()))
+        {
+            ResultSet rs = db.getRs();
+            while(db.getRs().next())
+            {
+                Pemilih p = new Pemilih(rs.getString("Nama Pemilih"),
+                        rs.getString("No_KTP"),
+                        rs.getString("tgl_lahir"),
+                        rs.getString("alamat"));
+                pemilih.add(p);
+            }
+        }
+        else
+        {
+            System.out.println("DATABASE KOSONG");
+        }
+        return pemilih;
     }
 }

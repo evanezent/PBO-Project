@@ -25,40 +25,40 @@ public class ControllerLoginPemilih extends MouseAdapter implements ActionListen
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-        if(src.equals(gui.getL_Pemilih()))
-        {
-            String nik = gui.getTfNIK();
-            int i =0;
-            if (CP.getPemilih().size() != 0){
-                while (i<CP.getPemilih().size() && (!nik.equals(CP.getPemilih().get(i).getNoKtp())))
-                {
-                    i++;
-                }
-                if (nik.equals(CP.getPemilih().get(i).getNoKtp()))
-                {
-                    new ControllerPemilih();
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
-                }
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "USER KOSONG");
-            }
-        }
-        else if (src.equals(gui.getL_Admin()))
-        {
-            new ControllerLoginAdmin();
-            gui.dispose();
-        }
-        else if (src.equals(gui.getL_Panitia()))
-        {
-            new ControllerLoginPanitia();
-            gui.dispose();
-        }
+//        if(src.equals(gui.getL_Pemilih()))
+//        {
+//            String nik = gui.getTfNIK();
+//            int i =0;
+//            if (CP.getPemilih().size() != 0){
+//                while (i<CP.getPemilih().size() && (!nik.equals(CP.getPemilih().get(i).getNoKtp())))
+//                {
+//                    i++;
+//                }
+//                if (nik.equals(CP.getPemilih().get(i).getNoKtp()))
+//                {
+//                    new ControllerPemilih();
+//                }
+//                else
+//                {
+//                    JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
+//                }
+//            }
+//            else
+//            {
+//                JOptionPane.showMessageDialog(null, "USER KOSONG");
+//            }
+//        }
+//        else if (src.equals(gui.getL_Admin()))
+//        {
+//            new ControllerLoginAdmin();
+//            gui.dispose();
+//        }
+//        else if (src.equals(gui.getL_Panitia()))
+//        {
+//            new ControllerLoginPanitia();
+//            gui.dispose();
+//        }
+//    }
+    
     }
-    
-    
 }

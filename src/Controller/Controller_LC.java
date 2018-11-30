@@ -32,11 +32,11 @@ public class Controller_LC extends MouseAdapter implements ActionListener {
         if (nKandidat == 2)
         {
             //no 1
-            count = kandidat.get(0).getJumlahSuara()/nKandidat*100;
+            count = Double.parseDouble(kandidat.get(0).getJumlahSuara())/nKandidat*100;
             hasil = Double.toString(count);
             view.setNo1(hasil);
             //no 2
-            count = kandidat.get(1).getJumlahSuara()/nKandidat*100;
+            count = Double.parseDouble(kandidat.get(1).getJumlahSuara())/nKandidat*100;
             hasil = Double.toString(count);
             view.setNo2(hasil);
         }

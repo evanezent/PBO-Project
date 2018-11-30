@@ -449,6 +449,11 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
         return Tab;
     }
     
+    //Set Tabel
+    public void setPemilih(DefaultTableModel tabel)
+    {
+        this.TabelPemilih.setModel(tabel);
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddKandidat_btn;
