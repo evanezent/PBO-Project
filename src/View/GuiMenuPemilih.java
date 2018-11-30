@@ -36,8 +36,6 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         Kandidat2btn = new javax.swing.JRadioButton();
         Kandidat1btn = new javax.swing.JRadioButton();
-        Kandidat3btn = new javax.swing.JRadioButton();
-        Kandidat4btn = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,38 +63,25 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
         KandidatBtnGroup.add(Kandidat1btn);
         Kandidat1btn.setText("Kandidat 1");
 
-        KandidatBtnGroup.add(Kandidat3btn);
-        Kandidat3btn.setText("Kandidat 3");
-
-        KandidatBtnGroup.add(Kandidat4btn);
-        Kandidat4btn.setText("Kandidat 4");
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(pilihPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Kandidat1btn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Kandidat2btn))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Kandidat3btn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Kandidat4btn)))
-                .addGap(80, 80, 80))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(pilihPemilih, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(109, Short.MAX_VALUE)
+                .addComponent(Kandidat1btn)
+                .addGap(174, 174, 174)
+                .addComponent(Kandidat2btn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,19 +89,14 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel17)
                 .addGap(2, 2, 2)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Kandidat2btn)
-                            .addComponent(Kandidat1btn))
-                        .addGap(96, 96, 96)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Kandidat3btn)
-                            .addComponent(Kandidat4btn)))
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Kandidat2btn)
+                    .addComponent(Kandidat1btn))
+                .addGap(65, 65, 65)
                 .addComponent(pilihPemilih)
-                .addGap(20, 20, 20))
+                .addContainerGap())
         );
 
         jPanel1.setLayout(null);
@@ -130,7 +110,7 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(257, 257, 257)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(258, Short.MAX_VALUE)))
+                    .addContainerGap(291, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,8 +134,6 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
     {
         if (Kandidat1btn.isSelected()) return '1';
         else if (Kandidat2btn.isSelected()) return '2';
-        else if (Kandidat3btn.isSelected()) return '3';
-        else if (Kandidat4btn.isSelected()) return '4';
         else return 'x';
     }
     
@@ -176,8 +154,6 @@ public class GuiMenuPemilih extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Kandidat1btn;
     private javax.swing.JRadioButton Kandidat2btn;
-    private javax.swing.JRadioButton Kandidat3btn;
-    private javax.swing.JRadioButton Kandidat4btn;
     private javax.swing.ButtonGroup KandidatBtnGroup;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
