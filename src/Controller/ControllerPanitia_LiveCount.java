@@ -18,6 +18,7 @@ public class ControllerPanitia_LiveCount extends MouseAdapter implements ActionL
     private List<Kandidat> kandidat = new ArrayList();// isi didapat dari panitia dan pemilih
     private List<Pemilih> pemilih = new ArrayList(); //dapet dr Panitia
     public ControllerPanitia_LiveCount() {
+
         view.ListenerLC(this);
         view.setVisible(true);
     }

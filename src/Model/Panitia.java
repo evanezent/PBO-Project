@@ -61,8 +61,6 @@ public class Panitia {
         return s;
     }
     
-    
-    
     public boolean checkUser(String uname, String pass) throws SQLException{
         
         boolean valid = false;
@@ -151,5 +149,8 @@ public class Panitia {
         }
         return panitia;
     }
-    
+
+    public List<Pemilih> getPemilih() {
+        return pemilih;
+    }
 }

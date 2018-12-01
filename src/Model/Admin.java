@@ -11,15 +11,15 @@ public class Admin{
     int idx;
     Scanner input = new Scanner(System.in);
     
-//    public void Login_admin()
-//    {
-//        while((!username_admin.equals("admin")) || (!password_admin.equals("12345"))){
-//            System.out.print("Username : ");
-//            username_admin = input.nextLine();
-//            System.out.print("Password : ");
-//            password_admin = input.nextLine();
-//        };
-//    }
+    public void Login_admin()
+    {
+        while((!username_admin.equals("admin")) || (!password_admin.equals("12345"))){
+            System.out.print("Username : ");
+            username_admin = input.nextLine();
+            System.out.print("Password : ");
+            password_admin = input.nextLine();
+        };
+    }
     
     //Get USer n Password
 

@@ -9,6 +9,7 @@ import View.*;
 import Database.*;
 import java.util.*;
 import java.awt.event.*;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,14 +21,13 @@ import javax.swing.table.DefaultTableModel;
  * @author esber
  */
 public class ControllerPanitia_Menu extends MouseAdapter implements ActionListener {
-    private Panitia_Menu guiPanitia;
+    private Panitia_Menu guiPanitia= new Panitia_Menu();
     private ArrayList<Pemilih> pemilih = new ArrayList();
     private ArrayList<Kandidat> kandidat = new ArrayList();
-    private Database db;
-    //gabisa jalan
+    private Database db = new Database();
+    
     public ControllerPanitia_Menu() {
-        db = new Database();
-        guiPanitia = new Panitia_Menu();
+        
         guiPanitia.TabAdapter(this);
         guiPanitia.TabListener(this);
         guiPanitia.setVisible(true);
@@ -35,16 +35,11 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
         loadTableKandidat();
     }
     
-    
-    
-//    public void removeKandidat(DefaultTableModel tabK,int indeks)
-//    {
-//        tabK.removeRow(indeks);
-//    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-   
+
         
         if(src.equals(guiPanitia.getAddPemilih_btn()))
         {
@@ -53,7 +48,6 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             String ttl = guiPanitia.getTf_TTLPemilih();
             String alamat = guiPanitia.getTf_AlamatPemilih();
             Pemilih p = new Pemilih(nama, no, ttl, alamat);
-            guiPanitia.resetPemiilih();
             db.insertPemilih(p);
             loadTablePemilih();
 
@@ -74,38 +68,35 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             Pemilih p = pemilih.get(idx);
             db.delPemilih(p);
             guiPanitia.resetPemiilih();
+        }
    
-        }
-        else if (src.equals(guiPanitia.getDelKandidat_btn()))
-        {
-            int idx = guiPanitia.getSelectedKandidat();
-            Kandidat k = kandidat.get(idx);
-            db.delKandidat(k);
-            guiPanitia.resetKandidat();
-        }
         else if (src.equals(guiPanitia.getEditPemilih_btn()))
         {
-            
+            int idx = guiPanitia.getSelectedPemilih();
+            Pemilih p = pemilih.get(idx);
+            ControllerPemilih_Edit view = new ControllerPemilih_Edit(p);
+            guiPanitia.resetPemiilih();
         }
     }
     
     
     public void loadTablePemilih()
     {
-        DefaultTableModel tabPemilih = new DefaultTableModel(new String[]{"Nama","No. KTP","Tanggal Lahir","Alamat"},0);
-        pemilih = db.getDataPemilih();
-        for (Pemilih p : pemilih)
+        DefaultTableModel tabPemilih = new DefaultTableModel(new String[]{"Nama Pemilih","Nomor KTP","Tanggal Lahir","Alamat"},0);
+        ArrayList<Pemilih> list = db.getDataPemilih();
+        for (Pemilih p : list)
         {
             tabPemilih.addRow(new Object[]{p.getNama_pemilih(),p.getNoKtp(),p.getTanggal_lahir(),p.getAlamat()});
         }
         guiPanitia.setPemilih(tabPemilih);
+        
     }
     
     public void loadTableKandidat()
     {
         DefaultTableModel tabKandidat = new DefaultTableModel(new String[]{"Nomor Urut","Nama Ketua","Nama Wakil"},0);
-        kandidat = db.getDataKandidat();
-        for (Kandidat k : kandidat)
+        ArrayList<Kandidat> list = db.getDataKandidat();
+        for (Kandidat k : list)
         {
             tabKandidat.addRow(new Object[]{k.getNoUrut(),k.getNamaKetua(),k.getNamaWakil()});
         }

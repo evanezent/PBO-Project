@@ -15,6 +15,11 @@ import java.util.*;
 public class Pemilih {
     private String nama_pemilih,noKtp,tanggal_lahir,alamat;
 
+    public Pemilih(String nama_pemilih, String noKtp) {
+        this.nama_pemilih = nama_pemilih;
+        this.noKtp = noKtp;
+    }
+    
     public Pemilih(String nama_pemilih, String noKtp, String tanggal_lahir, String alamat) {
         this.nama_pemilih = nama_pemilih;
         this.noKtp = noKtp;

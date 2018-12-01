@@ -27,8 +27,14 @@ public class Database {
     private ArrayList<Kandidat> kandidat = new ArrayList();
     private ArrayList<Pemilih> pemilih = new ArrayList();
     private Panitia panitia;
+
+    public Database() {
+        loadKandidat();
+        loadPemilih();
+    }
     
 
+    
     
     public void Connect(){
         //System.out.println("Connecting..");
@@ -103,8 +109,9 @@ public class Database {
     public void loadKandidat()
     {
         Connect();
+        String query = "SELECT * FROM Kandidat";
         try {
-            String query = "SELECT * FROM `Kandidat`";
+            
             rs = stmt.executeQuery(query);
             while (rs.next())
             {
@@ -118,9 +125,10 @@ public class Database {
     
     public void loadPemilih()
     {
-                Connect();
+        
+        Connect();
+        String query = "SELECT * FROM Pemilih";
         try {
-            String query = "SELECT * FROM `Pemilih`";
             rs = stmt.executeQuery(query);
             while (rs.next())
             {
@@ -167,21 +175,17 @@ public class Database {
         Disconnect();
     }
     
-    public void updatePemilih(Pemilih p) {
+    public void updatePemilih(Pemilih p, String ktp) {
         Connect();
         String query = "UPDATE `Pemilih` SET";
         query += " `Nama Pemilih`='" + p.getNama_pemilih() + "',";
-        query += " `No_KTP`='" + p.getNoKtp() + "',";
-        query += " `tgl_lahir`='" + p.getTanggal_lahir() + "'";
-        query += " `alamat`='" + p.getAlamat() + "'";
-        query += " WHERE `No_KTP`='" + p.getNoKtp() + "'";
+        query += " `No_KTP`='" + p.getNoKtp() + "'";
+        query += " WHERE `No_KTP`='" + ktp + "'";
         if (Manipulate(query)){
             for (Pemilih find : pemilih) {
-                if (find.getNoKtp().equals(p.getNoKtp())){
+                if (find.getNoKtp().equals(ktp)){
                     find.setNama_pemilih(p.getNama_pemilih());
                     find.setNoKtp(p.getNoKtp());
-                    find.setTanggal_lahir(p.getTanggal_lahir());
-                    find.setAlamat(p.getAlamat());
                     break;
                 }
             }
@@ -192,7 +196,6 @@ public class Database {
     
     public void updatePanitia(Panitia p,Panitia update)
     {
-      
         Connect();
         String query = "UPDATE `Panitia` SET ";
                query += "`Nama Panitia` = '" + p.getNama_panitia()+"',";
@@ -211,6 +214,21 @@ public class Database {
                Disconnect();
     }
     
+    public void deletePanitia(Panitia p)
+    {
+        Connect();
+        String query = "DELETE FROM `Panitia` WHERE Username = '"+p.getUser_panitia()+"';";
+        if (Manipulate(query))
+        {
+            System.out.println("TERHAPUS");
+        }
+        else
+        {
+            System.out.println("GAGAL");
+    
+        }
+        Disconnect();
+    }
     public void insertKandidat(Kandidat k)
     {
         Connect();

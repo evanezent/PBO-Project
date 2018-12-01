@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
+
 import Database.Database;
 import View.*;
 import Model.*;
@@ -32,12 +33,21 @@ public class ControllerPemilih_Login extends MouseAdapter implements ActionListe
             if (db.LoginPemilih(ktp))
             {
                 new ControllerPemilih_Menu();
-            }//
+            }
             else
             {
                 JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
             }
         }
-        
+        else if (src.equals(gui.getL_Panitia()))
+        {
+            new ControllerPanitia_Login();
+            gui.dispose();
+        }
+        else if (src.equals(gui.getL_Admin()))
+        {
+            new ControllerAdmin_Login();
+            gui.dispose();
+        }
     }
 }

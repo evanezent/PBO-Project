@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
+import Database.Database;
 import Model.*;
 import View.*;
 import java.util.*;
@@ -15,15 +16,15 @@ import javax.swing.JOptionPane;
  */
 public class ControllerPanitia_Edit extends MouseAdapter implements ActionListener {
     
-    private List<Model.Panitia> panitia;
+    private Panitia panitia;
     private View.Panitia_Edit gui;
     private int idx;
+    private Database db = new Database();
 
-    public ControllerPanitia_Edit(int idx) {
+    public ControllerPanitia_Edit(Panitia p) {
         
-        this.idx = idx;
         gui = new View.Panitia_Edit();
-        panitia = new ArrayList();
+        panitia = p;
         gui.AdapterEditPanitia(this);
         gui.ListenerEditPanitia(this);
         gui.setVisible(true);
@@ -38,8 +39,8 @@ public class ControllerPanitia_Edit extends MouseAdapter implements ActionListen
             String nama = gui.getTxNama();
             String user = gui.getTxUser();
             String pass = gui.getTxPass();
-            Panitia p = new Panitia(user,nama,pass);
-            panitia.add(p);
+            Panitia update = new Panitia(user,nama,pass);
+            db.updatePanitia(update, panitia);
             gui.dispose();
         }
         else
@@ -51,6 +52,6 @@ public class ControllerPanitia_Edit extends MouseAdapter implements ActionListen
     //simpen ke ArrayList<Panitia>
     //get ArrayList<Panitia>//
     public Panitia getPanitia() {
-        return panitia.get(idx);
+        return panitia;
     }
 }

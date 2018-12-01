@@ -16,16 +16,13 @@ import java.util.*;
 public class Kandidat {
     private String noUrut, namaKetua, namaWakil;
     private double hasilSuara;
-    //private byte[] img;
+    
 
     public Kandidat(String noUrut, String namaKetua, String namaWakil) {
         this.noUrut = noUrut;
         this.namaKetua = namaKetua;
         this.namaWakil = namaWakil;
     }
-
-    
-    
     public Kandidat(String namaKetua, String namaWakil, String noUrut, double hasilSuara) {
         this.namaKetua = namaKetua;
         this.namaWakil = namaWakil;
@@ -36,15 +33,16 @@ public class Kandidat {
     public String getNamaKetua() {
         return namaKetua;
     }
+    
 
     public void setNamaKetua(String namaKetua) {
         this.namaKetua = namaKetua;
+
     }
 
     public String getNamaWakil() {
         return namaWakil;
     }
-
     public void setNamaWakil(String namaWakil) {
         this.namaWakil = namaWakil;
     }
@@ -52,6 +50,7 @@ public class Kandidat {
     public String getNoUrut() {
         return noUrut;
     }
+
 
     public void setNoUrut(String noUrut) {
         this.noUrut = noUrut;
@@ -68,8 +67,9 @@ public class Kandidat {
     public void setHasilSuara() {
         this.hasilSuara++;
     }
-    
+
     public double getHasilSuara() {
+
         return this.hasilSuara;
     }
     
@@ -95,7 +95,28 @@ public class Kandidat {
         db.Disconnect();
     }
     
-    
+
+    public void insertKandidat(Kandidat k)
+    {
+        String query = "INSERT INTO `Kandidat` VALUES('";
+                        query +=  k.getNamaKetua() +"','";
+                        query +=  k.getNamaWakil() +"','";
+                        query +=  k.getNoUrut() +"','";
+                        query +=  k.getHasilSuara()+"')";
+        Database db = new Database();
+        db.Connect();
+        System.out.println(query);
+        if (db.Manipulate(query))
+        {
+            System.out.println("SUCCES");
+        }
+        else
+        {
+            System.out.println("FAILED");
+        }
+                       
+    }
+
     
     public List<Kandidat> getAllKandidat() throws SQLException
     {

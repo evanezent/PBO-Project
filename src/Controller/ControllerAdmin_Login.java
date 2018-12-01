@@ -6,8 +6,7 @@
 package Controller;
 import View.*;
 import Model.*;
-import java
-        .awt.event.*;
+import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
 /**
@@ -50,7 +49,5 @@ public class ControllerAdmin_Login extends MouseAdapter implements ActionListene
             new ControllerPemilih_Login();
             gui.dispose();
         }
-    }
-    
-    
+    }  
 }

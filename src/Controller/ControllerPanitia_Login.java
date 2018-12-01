@@ -38,6 +38,7 @@ public class ControllerPanitia_Login extends MouseAdapter implements ActionListe
                 String pass = gui.getpPanitia();
                 find = panitia.getAllPanitia();
                 if (panitia.checkUser(user, pass))
+
                 {
                     new ControllerPanitia_Menu();
                     gui.setVisible(false);
@@ -58,7 +59,7 @@ public class ControllerPanitia_Login extends MouseAdapter implements ActionListe
         else if (src.equals(gui.getLPemilih()))
         {
             new ControllerPemilih_Login();
-            gui.setVisible(false);
+            gui.dispose();
         }
     }
     
