@@ -10,6 +10,7 @@ import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -57,7 +58,6 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             Pemilih p = new Pemilih(nama, no, ttl, alamat);
             panitia.getPemilih().add(p);
             guiPanitia.resetPemiilih();
-            
         }
         else if (src.equals(guiPanitia.getDelPemilih_btn()))
         {

@@ -29,8 +29,6 @@ public class ControllerPanitia_Edit extends MouseAdapter implements ActionListen
         gui.setVisible(true);
     }
     
-        //Get List Panitia
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();

@@ -26,8 +26,6 @@ public class ControllerPanitia_Login extends MouseAdapter implements ActionListe
         gui.setVisible(true);
     }
     
-    
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();

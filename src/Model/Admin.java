@@ -49,18 +49,4 @@ public class Admin{
     public void hapus(int i) {
         panitia.remove(i);
     }
-    
-    public boolean login_panitia(String u,String p)
-    {
-        int i=0;
-            do
-            {
-                i++;
-            }while (i<=panitia.size() && !panitia.get(i).getUser_panitia().equals(u) || !panitia.get(i).getPasw_panitia().equals(p));
-            if (panitia.get(i).getUser_panitia().equals(u) && panitia.get(i).getPasw_panitia().equals(p)) return true;
-            else return false;
-    }
-    
-    
- 
 }
