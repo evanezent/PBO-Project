@@ -17,12 +17,11 @@ import javax.swing.JOptionPane;
  */
 public class ControllerLoginPanitia extends MouseAdapter implements ActionListener {
 
-    private LoginPanitia gui = new View.LoginPanitia();; 
+    private LoginPanitia gui = new View.LoginPanitia();
     private ControllerAdmin admin; 
     private Panitia panitia;
 
     public ControllerLoginPanitia() {
-        
         gui.ListenerLogPanitia(this);
         gui.setVisible(true);
     }

@@ -134,4 +134,8 @@ public class Panitia {
         }
         return panitia;
     }
+
+    public List<Pemilih> getPemilih() {
+        return pemilih;
+    }
 }

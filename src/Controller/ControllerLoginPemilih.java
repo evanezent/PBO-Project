@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class ControllerLoginPemilih extends MouseAdapter implements ActionListener {
        
-    private View.LoginPemilih gui = new View.LoginPemilih();;
-    private ControllerPanitia CP = new ControllerPanitia();;
+    private View.LoginPemilih gui = new View.LoginPemilih();
+    private Panitia panitia;
 
     public ControllerLoginPemilih() {
         gui.ListenerLogPemilih(this);
@@ -25,40 +25,38 @@ public class ControllerLoginPemilih extends MouseAdapter implements ActionListen
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-//        if(src.equals(gui.getL_Pemilih()))
-//        {
-//            String nik = gui.getTfNIK();
-//            int i =0;
-//            if (CP.getPemilih().size() != 0){
-//                while (i<CP.getPemilih().size() && (!nik.equals(CP.getPemilih().get(i).getNoKtp())))
-//                {
-//                    i++;
-//                }
-//                if (nik.equals(CP.getPemilih().get(i).getNoKtp()))
-//                {
-//                    new ControllerPemilih();
-//                }
-//                else
-//                {
-//                    JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
-//                }
-//            }
-//            else
-//            {
-//                JOptionPane.showMessageDialog(null, "USER KOSONG");
-//            }
-//        }
-//        else if (src.equals(gui.getL_Admin()))
-//        {
-//            new ControllerLoginAdmin();
-//            gui.dispose();
-//        }
-//        else if (src.equals(gui.getL_Panitia()))
-//        {
-//            new ControllerLoginPanitia();
-//            gui.dispose();
-//        }
-//    }
-    
+        if(src.equals(gui.getL_Pemilih()))
+        {
+            String nik = gui.getTfNIK();
+            int i =0;
+            if (!panitia.getPemilih().isEmpty()){
+                while (i<panitia.getPemilih().size() && (!nik.equals(panitia.getPemilih().get(i).getNoKtp())))
+                {
+                    i++;
+                }
+                if (nik.equals(panitia.getPemilih().get(i).getNoKtp()))
+                {
+                    new ControllerPemilih();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "USER KOSONG");
+            }
+        }
+        else if (src.equals(gui.getL_Admin()))
+        {
+            new ControllerLoginAdmin();
+            gui.dispose();
+        }
+        else if (src.equals(gui.getL_Panitia()))
+        {
+            new ControllerLoginPanitia();
+            gui.dispose();
+        }
     }
 }
