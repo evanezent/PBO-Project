@@ -11,12 +11,12 @@ import javax.swing.*;
  *
  * @author Prana
  */
-public class GuiMenuPemilih extends javax.swing.JFrame {
+public class Pemilih_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form menuPilih
      */
-    public GuiMenuPemilih() {
+    public Pemilih_Menu() {
         initComponents();
     }
 

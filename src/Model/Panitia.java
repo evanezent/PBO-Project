@@ -106,14 +106,26 @@ public class Panitia {
                        
     }
     
-    public void deletePanitia(Panitia p) throws SQLException
+    public void deletePanitia(Panitia p)//Panitia
     {
         Database db = new Database();
         db.Connect();
-        String query = "DELETE FROM `Panitia` WHERE `Username` = '"+p.getUser_panitia()+"';";
-        
+        String query = "DELETE FROM Panitia WHERE Username = '"+p.getUser_panitia()+"';";
+        db.Disconnect();
     }
-
+    
+    public boolean LoginPemilih(String user, String pass) throws SQLException{
+        boolean cek = false;
+        List<Panitia> panitia = getAllPanitia();
+        for (Panitia find : panitia) {
+            if ((find.getUser_panitia().equals(user)) && (find.getPasw_panitia().equals(pass))){
+                cek = true;
+                break;
+            }
+        }
+        return cek;
+    }
+    
     public List<Panitia> getAllPanitia() throws SQLException
     {
         List<Panitia> panitia = new ArrayList();
@@ -140,24 +152,4 @@ public class Panitia {
         return panitia;
     }
     
-    public void updatePanitia(Panitia p,Panitia update)
-    {
-        Database db = new Database();
-        db.Connect();
-        String query = "UPDATE `Panitia` SET ";
-               query += "`Nama Panitia` = '" + p.getNama_panitia()+"',";
-               query += "`Username` = '" + p.getUser_panitia()+"',";
-               query += "`Password` = '" + p.getPasw_panitia()+"'";
-               query += " WHERE `Username` = '" + update.getUser_panitia()+"';";
-               System.out.println(query);
-               if (db.Manipulate(query))
-               {
-                   System.out.println("Data berhasil di Update");
-               }
-               else
-               {
-                   System.out.println("Data gagal di Update");
-               }
-               db.Disconnect();
-    }
 }

@@ -7,7 +7,6 @@
 package Controller;
 import Model.*;
 import View.*;
-import Database.*;
 import java.util.*;
 import java.awt.event.*;
 import java.sql.SQLException;
@@ -18,16 +17,15 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerAdmin extends MouseAdapter implements ActionListener {
-    
+public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener {
     
     private Admin_Menu guiAdmin = new Admin_Menu();;
     private Admin modelAdmin = new Admin();
     private Panitia panitia = new Panitia("", "", "");
-    private Panitia_Edit EP;
+    private View.Panitia_Edit EP;
 
     //Coment
-    public ControllerAdmin() {
+    public ControllerAdmin_Menu() {
 
         guiAdmin.AdminAdapter(this);
         guiAdmin.AdminListener(this);
@@ -59,7 +57,7 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
                 guiAdmin.ResetShowAdmin();
                 guiAdmin.setListPanitia(getDataPanitia());
             } catch (SQLException ex) {
-                Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 //        else if (src.equals(guiAdmin.getDeletePanitia())) //DELETE BElom Jalan
@@ -71,20 +69,21 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
 //                guiAdmin.ResetShowAdmin();
 //                guiAdmin.setListPanitia(getDataPanitia());
 //            }
-        else if (src.equals(guiAdmin.getEditPanitia()))
-        {   
-            try {
-                int idx = guiAdmin.getSelectedPanitia();
-                Panitia p = panitia.getAllPanitia().get(idx);
-                ControllerEditPanitia CEP = new ControllerEditPanitia(p);
-                guiAdmin.ResetShowAdmin();
-                guiAdmin.setListPanitia(getDataPanitia());
-            } catch (SQLException ex) {
-                Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-            
-        
+//        else if (src.equals(guiAdmin.getEditPanitia()))
+//        {   
+//            int idx = guiAdmin.getSelectedPanitia();
+//            ControllerEditPanitia CEP = new ControllerEditPanitia(idx);
+//            Panitia p = CEP.getPanitia();
+//            panitia.remove(idx);
+//            panitia.add(idx, p);
+//            guiAdmin.ResetShowAdmin();
+//            guiAdmin.setListPanitia(getDataPanitia());
+//        }
+//            catch (SQLException ex) {
+//                Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            
+//        }
         else if (src.equals(guiAdmin.getBtnHome()))
         {
             new ControllerAdmin_Login();
@@ -104,7 +103,7 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
                 Panitia p = panitia.getAllPanitia().get(idx);
                 guiAdmin.setTextPanitia(p.tampilPanitia());
             } catch (SQLException ex) {
-                Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

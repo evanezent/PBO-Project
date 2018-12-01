@@ -19,7 +19,7 @@ public class PBO {
      */
     public static void main(String[] args) throws SQLException {
         
-        new ControllerAdmin();
+        new ControllerPemilih_Login();
         
 
     }

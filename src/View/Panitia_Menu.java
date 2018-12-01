@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author esber
  */
-public class GuiMenuPanitia extends javax.swing.JFrame {
+public class Panitia_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form GuiMenuPanitia
      */
-    public GuiMenuPanitia() {
+    public Panitia_Menu() {
         initComponents();
     }
 
@@ -83,7 +83,7 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
 
         TabelPemilih.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null}
             },
             new String [] {
                 "Nama", "No. KTP", "Tanggal Lahir", "Alamat"
@@ -100,6 +100,11 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
         jScrollPane2.setViewportView(TabelPemilih);
 
         DelPemilih_btn.setText("Hapus");
+        DelPemilih_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DelPemilih_btnActionPerformed(evt);
+            }
+        });
 
         EditPemilih_btn.setText("Edit");
 
@@ -112,12 +117,6 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(EditPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DelPemilih_btn)
-                .addGap(21, 21, 21))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -131,7 +130,7 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(102, 102, 102)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(AddPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -145,6 +144,12 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
                                     .addComponent(tf_KTPPemilih)
                                     .addComponent(tf_NamaPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(EditPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DelPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +189,10 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
 
         TabelKandidat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
                 "Nomor Urut", "Nama Ketua", "Nama Wakil"
@@ -245,7 +253,7 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
                                             .addComponent(tf_KandidatKetua, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 346, Short.MAX_VALUE)
+                        .addGap(0, 379, Short.MAX_VALUE)
                         .addComponent(EditKandidat_btn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DelKandidat_btn)))
@@ -291,7 +299,7 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 486, Short.MAX_VALUE)
+            .addGap(0, 490, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,6 +321,10 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void DelPemilih_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelPemilih_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DelPemilih_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -452,9 +464,23 @@ public class GuiMenuPanitia extends javax.swing.JFrame {
     //Set Tabel
     public void setPemilih(DefaultTableModel tabel)
     {
-        this.TabelPemilih.setModel(tabel);
+        TabelPemilih.setModel(tabel);
     }
     
+    public void setKandidat(DefaultTableModel table)
+    {
+        TabelKandidat.setModel(table);
+    }
+    
+    
+    public int getSelectedPemilih()
+    {
+        return TabelPemilih.getSelectedRow();
+    }
+    public int getSelectedKandidat()
+    {
+        return TabelKandidat.getSelectedRow();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddKandidat_btn;
     private javax.swing.JButton AddPemilih_btn;

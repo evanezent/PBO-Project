@@ -14,12 +14,12 @@ import java.awt.event.*;
  *
  * @author Prana
  */
-public class LoginPemilih extends javax.swing.JFrame {
+public class Pemilih_Login extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public LoginPemilih() {
+    public Pemilih_Login() {
         initComponents();
     }
 

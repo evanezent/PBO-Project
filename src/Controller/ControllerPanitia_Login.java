@@ -8,6 +8,7 @@ import View.*;
 import Model.*;
 import java.awt.event.*;
 import java.sql.SQLException;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -15,19 +16,17 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerLoginPanitia extends MouseAdapter implements ActionListener {
+public class ControllerPanitia_Login extends MouseAdapter implements ActionListener {
 
-    private LoginPanitia gui = new View.LoginPanitia();; 
-    private ControllerAdmin admin; 
-    private Panitia panitia;
+    private Panitia_Login gui = new View.Panitia_Login();
+    private ControllerAdmin_Menu admin; 
+    private Panitia panitia = new Panitia("", "", "");
+    List<Panitia> find = new ArrayList();
 
-    public ControllerLoginPanitia() {
-        
+    public ControllerPanitia_Login() {
         gui.ListenerLogPanitia(this);
         gui.setVisible(true);
     }
-    
-    
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -37,14 +36,10 @@ public class ControllerLoginPanitia extends MouseAdapter implements ActionListen
             try {
                 String user = gui.getuPanitia();
                 String pass = gui.getpPanitia();
-                int i =0;
-                while ((i<panitia.getAllPanitia().size()) && (!user.equals(panitia.getAllPanitia().get(i).getUser_panitia()) || !pass.equals(panitia.getAllPanitia().get(i).getUser_panitia())))
+                find = panitia.getAllPanitia();
+                if (panitia.checkUser(user, pass))
                 {
-                    i++;
-                }
-                if (user.equals(panitia.getAllPanitia().get(i).getUser_panitia()) || pass.equals(panitia.getAllPanitia().get(i).getUser_panitia()))
-                {
-                    new ControllerPanitia();
+                    new ControllerPanitia_Menu();
                     gui.setVisible(false);
                 }
                 else
@@ -52,17 +47,17 @@ public class ControllerLoginPanitia extends MouseAdapter implements ActionListen
                     JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
                 }
             } catch (SQLException ex) {
-                Logger.getLogger(ControllerLoginPanitia.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerPanitia_Login.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else if (src.equals(gui.getLAdmin()))
         {
-            new ControllerLoginAdmin();
+            new ControllerAdmin_Login();
             gui.dispose();
         }
         else if (src.equals(gui.getLPemilih()))
         {
-            new ControllerLoginPemilih();
+            new ControllerPemilih_Login();
             gui.setVisible(false);
         }
     }

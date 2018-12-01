@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerPemilih extends MouseAdapter implements ActionListener {
+public class ControllerPemilih_Menu extends MouseAdapter implements ActionListener {
 
-    private GuiMenuPemilih view = new GuiMenuPemilih();
+    private Pemilih_Menu view = new Pemilih_Menu();
     private List<Kandidat> kandidat = new ArrayList(); // List sambungan isi dari Panitia
 
-    public ControllerPemilih() {
+    public ControllerPemilih_Menu() {
         view.ListenerVoting(this);
         view.setVisible(true);
     }
@@ -33,25 +33,14 @@ public class ControllerPemilih extends MouseAdapter implements ActionListener {
             char pilihan = view.getPilihan();
             if ( pilihan == '1')
             {
-                kandidat.get(0).setJumlahSuara();
+                kandidat.get(0).setHasilSuara();
             }
             else if (pilihan == '2')
             {
-                kandidat.get(1).setJumlahSuara();
-            }
-            else if (pilihan == '3')
-            {
-                kandidat.get(2).setJumlahSuara();
-            }
-            else if (pilihan == '4')
-            {
-                kandidat.get(3).setJumlahSuara();
-            }
-            else
-            {
+                kandidat.get(1).setHasilSuara();
+            }else{
                 JOptionPane.showMessageDialog(null, "ERROR");
             }
         }
     }
-    
 }

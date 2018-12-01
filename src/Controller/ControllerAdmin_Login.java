@@ -14,11 +14,11 @@ import javax.swing.*;
  *
  * @author esber
  */
-public class ControllerLoginAdmin extends MouseAdapter implements ActionListener {
-    View.LoginAdmin gui = new View.LoginAdmin();;
+public class ControllerAdmin_Login extends MouseAdapter implements ActionListener {
+    View.Admin_Login gui = new View.Admin_Login();;
     Model.Admin admin = new Model.Admin();
 
-    public ControllerLoginAdmin() {
+    public ControllerAdmin_Login() {
 
         gui.listenerLoginAdmin(this);
         gui.setVisible(true);
@@ -33,7 +33,7 @@ public class ControllerLoginAdmin extends MouseAdapter implements ActionListener
             String pass = gui.getTf_pAdmin();
             if (user.equals(admin.getUsername_admin()) && pass.equals(admin.getPassword_admin()))
             {
-                new ControllerAdmin();
+                new ControllerAdmin_Menu();
                 gui.dispose();
             }
             else 
@@ -42,12 +42,12 @@ public class ControllerLoginAdmin extends MouseAdapter implements ActionListener
             }
         }
         else if(src.equals(gui.getL_asPanitia())){
-            new ControllerLoginPanitia();
+            new ControllerPanitia_Login();
             gui.dispose();
         }
         else if (src.equals(gui.getL_asPemilih()))
         {
-            new ControllerLoginPemilih();
+            new ControllerPemilih_Login();
             gui.dispose();
         }
     }

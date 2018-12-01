@@ -55,26 +55,6 @@ public class Pemilih {
     }
     
     
-        public void insertPemilih(Pemilih p)
-    {
-        String query = "INSERT INTO `Pemilih` VALUES('";
-                        query +=  p.getNama_pemilih() +"','";
-                        query +=  p.getNoKtp() +"','";
-                        query +=  p.getTanggal_lahir() +"','";
-                        query +=  p.getAlamat()+"')";
-        Database db = new Database();
-        db.Connect();
-        System.out.println(query);
-        if (db.Manipulate(query))
-        {
-            System.out.println("SUCCES");
-        }
-        else
-        {
-            System.out.println("FAILED");
-        }
-                       
-    }
     
     public List<Pemilih> getAllPemilih() throws SQLException
     {

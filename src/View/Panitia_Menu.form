@@ -56,13 +56,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="EditPemilih_btn" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="DelPemilih_btn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -79,8 +72,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="AddPemilih_btn" min="-2" pref="87" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
+                                  <Component id="AddPemilih_btn" min="-2" pref="109" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -99,6 +92,13 @@
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="EditPemilih_btn" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="DelPemilih_btn" min="-2" pref="87" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -188,7 +188,7 @@
                 <Component class="javax.swing.JTable" name="TabelPemilih">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="0">
+                      <Table columnCount="4" rowCount="1">
                         <Column editable="true" title="Nama" type="java.lang.String"/>
                         <Column editable="true" title="No. KTP" type="java.lang.String"/>
                         <Column editable="true" title="Tanggal Lahir" type="java.lang.String"/>
@@ -230,6 +230,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hapus"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DelPemilih_btnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="EditPemilih_btn">
               <Properties>
@@ -293,7 +296,7 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="346" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="379" max="32767" attributes="0"/>
                               <Component id="EditKandidat_btn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="DelKandidat_btn" min="-2" max="-2" attributes="0"/>
@@ -355,7 +358,7 @@
                 <Component class="javax.swing.JTable" name="TabelKandidat">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="3" rowCount="0">
+                      <Table columnCount="3" rowCount="4">
                         <Column editable="true" title="Nomor Urut" type="java.lang.Integer"/>
                         <Column editable="true" title="Nama Ketua" type="java.lang.String"/>
                         <Column editable="true" title="Nama Wakil" type="java.lang.String"/>
@@ -453,7 +456,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="486" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="490" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">

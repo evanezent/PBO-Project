@@ -12,12 +12,12 @@ import java.awt.event.*;
  *
  * @author esber
  */
-public class Controller_LC extends MouseAdapter implements ActionListener {
+public class ControllerPanitia_LiveCount extends MouseAdapter implements ActionListener {
 
-    private GuiMenuLiveCount view = new GuiMenuLiveCount();
+    private Panitia_LiveCount view = new Panitia_LiveCount();
     private List<Kandidat> kandidat = new ArrayList();// isi didapat dari panitia dan pemilih
     private List<Pemilih> pemilih = new ArrayList(); //dapet dr Panitia
-    public Controller_LC() {
+    public ControllerPanitia_LiveCount() {
         view.ListenerLC(this);
         view.setVisible(true);
     }
@@ -29,17 +29,14 @@ public class Controller_LC extends MouseAdapter implements ActionListener {
         int nPemilih = pemilih.size();
         double count;
         String hasil; 
-        if (nKandidat == 2)
-        {
-            //no 1
-            count = Double.parseDouble(kandidat.get(0).getJumlahSuara())/nKandidat*100;
-            hasil = Double.toString(count);
-            view.setNo1(hasil);
-            //no 2
-            count = Double.parseDouble(kandidat.get(1).getJumlahSuara())/nKandidat*100;
-            hasil = Double.toString(count);
-            view.setNo2(hasil);
-        }
+        //no 1
+        count = kandidat.get(0).getHasilSuara()/nKandidat*100;
+        hasil = Double.toString(count);
+        view.setNo1(hasil);
+        //no 2
+        count = kandidat.get(1).getHasilSuara()/nKandidat*100;
+        hasil = Double.toString(count);
+        view.setNo2(hasil);
     }
        
 }

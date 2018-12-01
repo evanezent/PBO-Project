@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Model.*;
+import java.util.*;
 
 /**
  *
@@ -22,6 +24,9 @@ public class Database {
     private Connection conn = null;
     private Statement stmt = null;
     private ResultSet rs = null;
+    private ArrayList<Kandidat> kandidat = new ArrayList();
+    private ArrayList<Pemilih> pemilih = new ArrayList();
+    private Panitia panitia;
     
 
     
@@ -95,5 +100,174 @@ public class Database {
         return !rs.isBeforeFirst();
     }
     
+    public void loadKandidat()
+    {
+        Connect();
+        try {
+            String query = "SELECT * FROM `Kandidat`";
+            rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                kandidat.add(new Kandidat(rs.getString("Ketua"),rs.getString("Wakil"),rs.getString("no_Urut"),rs.getDouble("jumlahSuara")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Disconnect();
+    }
+    
+    public void loadPemilih()
+    {
+                Connect();
+        try {
+            String query = "SELECT * FROM `Pemilih`";
+            rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                pemilih.add(new Pemilih(rs.getString("Nama Pemilih"),rs.getString("No_KTP"),rs.getString("tgl_lahir"),rs.getString("alamat")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Disconnect();
+    }
+    
+    public void insertPemilih(Pemilih p)
+    {
+        Connect();
+        String query = "INSERT INTO `Pemilih` VALUES('";
+                        query +=  p.getNama_pemilih() +"','";
+                        query +=  p.getNoKtp() +"','";
+                        query +=  p.getTanggal_lahir() +"','";
+                        query +=  p.getAlamat()+"')";
+        
+        System.out.println(query);
+        if (Manipulate(query))
+        {
+            pemilih.add(p);
+        }
+        else
+        {
+            System.out.println("FAILED");
+        }
+        Disconnect();
+    }
+    
+    public void delPemilih(Pemilih p) {
+        Connect();
+        String query = "DELETE FROM `Pemilih` WHERE `No_KTP`='" + p.getNoKtp() + "'";
+        if (Manipulate(query)){
+            for (Pemilih find : pemilih) {
+                if (find.getNoKtp().equals(p.getNoKtp())){
+                    pemilih.remove(find);
+                    break;
+                }
+            }
+        }
+        Disconnect();
+    }
+    
+    public void updatePemilih(Pemilih p) {
+        Connect();
+        String query = "UPDATE `Pemilih` SET";
+        query += " `Nama Pemilih`='" + p.getNama_pemilih() + "',";
+        query += " `No_KTP`='" + p.getNoKtp() + "',";
+        query += " `tgl_lahir`='" + p.getTanggal_lahir() + "'";
+        query += " `alamat`='" + p.getAlamat() + "'";
+        query += " WHERE `No_KTP`='" + p.getNoKtp() + "'";
+        if (Manipulate(query)){
+            for (Pemilih find : pemilih) {
+                if (find.getNoKtp().equals(p.getNoKtp())){
+                    find.setNama_pemilih(p.getNama_pemilih());
+                    find.setNoKtp(p.getNoKtp());
+                    find.setTanggal_lahir(p.getTanggal_lahir());
+                    find.setAlamat(p.getAlamat());
+                    break;
+                }
+            }
+        }
+        Disconnect();
+    }
+    
+    
+    public void updatePanitia(Panitia p,Panitia update)
+    {
+      
+        Connect();
+        String query = "UPDATE `Panitia` SET ";
+               query += "`Nama Panitia` = '" + p.getNama_panitia()+"',";
+               query += "`Username` = '" + p.getUser_panitia()+"',";
+               query += "`Password` = '" + p.getPasw_panitia()+"'";
+               query += " WHERE `Username` = '" + update.getUser_panitia()+"';";
+               System.out.println(query);
+               if (Manipulate(query))
+               {
+                   System.out.println("Data berhasil di Update");
+               }
+               else
+               {
+                   System.out.println("Data gagal di Update");
+               }
+               Disconnect();
+    }
+    
+    public void insertKandidat(Kandidat k)
+    {
+        Connect();
+        String query = "INSERT INTO `Kandidat` VALUES('";
+                        query +=  k.getNamaKetua() +"','";
+                        query +=  k.getNamaWakil() +"','";
+                        query +=  k.getNoUrut() +"','";
+                        query +=  k.getHasilSuara()+"')";
+        
+        System.out.println(query);
+        if (Manipulate(query))
+        {
+            kandidat.add(k);
+        }
+        else
+        {
+            System.out.println("FAILED");
+        }
+          Disconnect();
+    }
+    
+     public void delKandidat(Kandidat k) {
+        Connect();
+        String query = "DELETE FROM `Kandidat` WHERE `no_Urut`='" + k.getNoUrut() + "'";
+        if (Manipulate(query)){
+            for (Kandidat find : kandidat) {
+                if (find.getNoUrut().equals(k.getNoUrut())){
+                    kandidat.remove(find);
+                    break;
+                }
+            }
+        }
+        Disconnect();
+    }
+     
+     
+    public boolean LoginPemilih(String ktp){
+        boolean cek = false;
+        Connect();
+        for (Pemilih find : pemilih) {
+            if (find.getNoKtp().equals(ktp)){
+                cek = true;
+                break;
+            }
+        }
+        Disconnect();
+        return cek;
+    }
+     
+    public ArrayList<Pemilih> getDataPemilih()
+    {
+        return pemilih;
+    }
+    
+    public ArrayList<Kandidat> getDataKandidat()
+    {
+        return kandidat;
+    }
 }
 
