@@ -32,7 +32,7 @@ public class ControllerPemilih_Login extends MouseAdapter implements ActionListe
             if (db.LoginPemilih(ktp))
             {
                 new ControllerPemilih_Menu();
-            }
+            }//
             else
             {
                 JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
