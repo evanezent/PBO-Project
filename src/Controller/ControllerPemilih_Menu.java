@@ -15,38 +15,38 @@ import javax.swing.JOptionPane;
  */
 public class ControllerPemilih_Menu extends MouseAdapter implements ActionListener {
 
-    //private Pemilih_Menu view = new Pemilih_Menu();
+    private Pemilih_Menu view = new Pemilih_Menu();
     private List<Kandidat> kandidat = new ArrayList(); // List sambungan isi dari Panitia
 
-//    public ControllerPemilih_Menu() {
-//
-//        view.ListenerVoting(this);
-//        view.setVisible(true);
-//    }
-    
-    
-    
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        Object src = e.getSource();
-//        if (src.equals(view.getPilihPemilih()))
-//        {
-//            char pilihan = view.getPilihan();
-//            if ( pilihan == '1')
-//            {
-//                kandidat.get(0).setHasilSuara();
-//            }
-//            else if (pilihan == '2')
-//            {
-//                kandidat.get(1).setHasilSuara();
-//            }else{
-//                JOptionPane.showMessageDialog(null, "ERROR");
-//            }
-//        }
-//    }
+    public ControllerPemilih_Menu() {
 
+        view.ListenerVoting(this);
+        view.setVisible(true);
+    }
+    
+    
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object src = e.getSource();
+        if (src.equals(view.getPilihPemilih()))
+        {
+            char pilihan = view.getPilihan();
+            if ( pilihan == '1')
+            {
+                kandidat.get(0).setHasilSuara();
+                Kandidat k = kandidat.get(0);
+                kandidat.get(0).updatejumlahSuara(k);
+            }
+            else if (pilihan == '2')
+            {
+                kandidat.get(1).setHasilSuara();
+                Kandidat k = kandidat.get(1);
+                kandidat.get(1).updatejumlahSuara(k);
+            }else{
+                JOptionPane.showMessageDialog(null, "ERROR");
+            }
+        }
     }
+
 }

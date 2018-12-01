@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
+import Database.Database;
 import Model.*;
 import View.*;
 import java.util.*;
@@ -17,6 +18,7 @@ public class ControllerPanitia_LiveCount extends MouseAdapter implements ActionL
     private Panitia_LiveCount view = new Panitia_LiveCount();
     private List<Kandidat> kandidat = new ArrayList();// isi didapat dari panitia dan pemilih
     private List<Pemilih> pemilih = new ArrayList(); //dapet dr Panitia
+    private Database db = new Database();
     public ControllerPanitia_LiveCount() {
 
         view.ListenerLC(this);

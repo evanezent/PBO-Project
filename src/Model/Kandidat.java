@@ -78,10 +78,8 @@ public class Kandidat {
         Database db = new Database();
         db.Connect();
         String query = "UPDATE `Kandidat` SET";
-                        query += "`Ketua`= '"+k.getNamaKetua()+"',";
-                        query += "`Wakil`= '"+k.getNamaWakil()+"',";
-                        query += "`no_Urut`= '"+k.getNoUrut()+"'";
-                        query += " `jumlahSuara` = '"+k.getHasilSuara()+"';";
+                        query += " `jumlahSuara` = '"+k.getHasilSuara()+"'";
+                        query += "WHERE `no_Urut` = '"+k.getNoUrut()+"';";
         
         System.out.println(query);
         if (db.Manipulate(query))
