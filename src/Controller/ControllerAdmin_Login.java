@@ -19,7 +19,7 @@ public class ControllerAdmin_Login extends MouseAdapter implements ActionListene
     Model.Admin admin = new Model.Admin();
 
     public ControllerAdmin_Login() {
-
+        gui.setTitle("Login Admin");
         gui.listenerLoginAdmin(this);
         gui.setVisible(true);
     }

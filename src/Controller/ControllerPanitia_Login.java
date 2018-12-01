@@ -22,6 +22,7 @@ public class ControllerPanitia_Login extends MouseAdapter implements ActionListe
     private Panitia panitia;
 
     public ControllerPanitia_Login() {
+        gui.setTitle("Login Panitia");
         gui.ListenerLogPanitia(this);
         gui.setVisible(true);
     }

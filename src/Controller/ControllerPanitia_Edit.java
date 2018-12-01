@@ -20,7 +20,7 @@ public class ControllerPanitia_Edit extends MouseAdapter implements ActionListen
     private int idx;
 
     public ControllerPanitia_Edit(int idx) {
-        
+        gui.setTitle("Menu Edit Panitia");
         this.idx = idx;
         gui = new View.Panitia_Edit();
         panitia = new ArrayList();

@@ -18,6 +18,7 @@ public class ControllerPemilih_Login extends MouseAdapter implements ActionListe
     private Panitia panitia;
 
     public ControllerPemilih_Login() {
+        gui.setTitle("Login Pemilih");
         gui.ListenerLogPemilih(this);
         gui.setVisible(true);
     }

@@ -23,6 +23,7 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
     private Panitia panitia;
     //gabisa jalan
     public ControllerPanitia_Menu() {
+        guiPanitia.setTitle("Menu Panitia");
         guiPanitia.TabAdapter(this);
         guiPanitia.TabListener(this);
         guiPanitia.setVisible(true);

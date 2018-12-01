@@ -26,7 +26,7 @@ public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener
 
     //Coment
     public ControllerAdmin_Menu() {
-
+        guiAdmin.setTitle("Menu Admin");
         guiAdmin.AdminAdapter(this);
         guiAdmin.AdminListener(this);
         guiAdmin.setVisible(true);

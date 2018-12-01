@@ -19,6 +19,7 @@ public class ControllerPemilih_Menu extends MouseAdapter implements ActionListen
     private List<Kandidat> kandidat = new ArrayList(); // List sambungan isi dari Panitia
 
     public ControllerPemilih_Menu() {
+        view.setTitle("Menu Pemilih");
         view.ListenerVoting(this);
         view.setVisible(true);
     }
