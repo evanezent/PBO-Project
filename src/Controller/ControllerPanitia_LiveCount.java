@@ -29,17 +29,14 @@ public class ControllerPanitia_LiveCount extends MouseAdapter implements ActionL
         int nPemilih = pemilih.size();
         double count;
         String hasil; 
-        if (nKandidat == 2)
-        {
-            //no 1
-            count = Double.parseDouble(kandidat.get(0).getJumlahSuara())/nKandidat*100;
-            hasil = Double.toString(count);
-            view.setNo1(hasil);
-            //no 2
-            count = Double.parseDouble(kandidat.get(1).getJumlahSuara())/nKandidat*100;
-            hasil = Double.toString(count);
-            view.setNo2(hasil);
-        }
+        //no 1
+        count = kandidat.get(0).getHasilSuara()/nKandidat*100;
+        hasil = Double.toString(count);
+        view.setNo1(hasil);
+        //no 2
+        count = kandidat.get(1).getHasilSuara()/nKandidat*100;
+        hasil = Double.toString(count);
+        view.setNo2(hasil);
     }
        
 }

@@ -50,10 +50,8 @@ public class ControllerPanitia_Edit extends MouseAdapter implements ActionListen
         }
     }
 
-    //simpen ke ArrayList<Panitita>
-    
+    //simpen ke ArrayList<Panitia>
     //get ArrayList<Panitia>//
-
     public Panitia getPanitia() {
         return panitia.get(idx);
     }

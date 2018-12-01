@@ -14,39 +14,39 @@ import java.util.*;
  * @author TamaBarbar
  */
 public class Kandidat {
-    private String no_urut,nama_ketua,nama_wakil;
-    private int jumlahSuara;
+    private String noUrut, namaKetua, namaWakil;
+    private int hasilSuara;
     //private byte[] img;
 
-    public Kandidat(String nama_ketua, String nama_wakil, String no_urut, int nSuara) {
-        this.nama_ketua = nama_ketua;
-        this.nama_wakil = nama_wakil;
-        this.no_urut = no_urut;
-        this.jumlahSuara = nSuara;
+    public Kandidat(String namaKetua, String namaWakil, String noUrut, int hasilSuara) {
+        this.namaKetua = namaKetua;
+        this.namaWakil = namaWakil;
+        this.noUrut = noUrut;
+        this.hasilSuara = hasilSuara;
     }
 
-    public String getNama_ketua() {
-        return nama_ketua;
+    public String getNamaKetua() {
+        return namaKetua;
     }
 
-    public void setNama_ketua(String nama_ketua) {
-        this.nama_ketua = nama_ketua;
+    public void setNamaKetua(String namaKetua) {
+        this.namaKetua = namaKetua;
     }
 
-    public String getNama_wakil() {
-        return nama_wakil;
+    public String getNamaWakil() {
+        return namaWakil;
     }
 
-    public void setNama_wakil(String nama_wakil) {
-        this.nama_wakil = nama_wakil;
+    public void setNamaWakil(String namaWakil) {
+        this.namaWakil = namaWakil;
     }
 
-    public String getNo_urut() {
-        return no_urut;
+    public String getNoUrut() {
+        return noUrut;
     }
 
-    public void setNo_urut(String no_urut) {
-        this.no_urut = no_urut;
+    public void setNoUrut(String noUrut) {
+        this.noUrut = noUrut;
     }
 
 //    public byte[] getImg() {
@@ -57,24 +57,23 @@ public class Kandidat {
 //        this.img = img;
 //    }
 
-    public String getJumlahSuara() {
-        String s = Integer.toString(jumlahSuara);
-        return s;
+    public void setHasilSuara() {
+        this.hasilSuara++;
     }
-
-    public void setJumlahSuara() {
-        this.jumlahSuara = this.jumlahSuara+1;
+    
+    public int getHasilSuara() {
+        return this.hasilSuara;
     }
-
+    
     public void updatejumlahSuara(Kandidat k)//EROR
     {
         Database db = new Database();
         db.Connect();
         String query = "UPDATE `Kandidat` SET";
-                        query += "`Ketua`= '"+k.getNama_ketua()+"',";
-                        query += "`Wakil`= '"+k.getNama_wakil()+"',";
-                        query += "`no_Urut`= '"+k.getNo_urut()+"'";
-                        query += " `jumlahSuara` = '"+k.getJumlahSuara()+"';";
+                        query += "`Ketua`= '"+k.getNamaKetua()+"',";
+                        query += "`Wakil`= '"+k.getNamaWakil()+"',";
+                        query += "`no_Urut`= '"+k.getNoUrut()+"'";
+                        query += " `jumlahSuara` = '"+k.getHasilSuara()+"';";
         
         System.out.println(query);
         if (db.Manipulate(query))
@@ -91,10 +90,10 @@ public class Kandidat {
     public void insertKandidat(Kandidat k)
     {
         String query = "INSERT INTO `Kandidat` VALUES('";
-                        query +=  k.getNama_ketua() +"','";
-                        query +=  k.getNama_wakil() +"','";
-                        query +=  k.getNo_urut() +"','";
-                        query +=  k.getJumlahSuara()+"')";
+                        query +=  k.getNamaKetua() +"','";
+                        query +=  k.getNamaWakil() +"','";
+                        query +=  k.getNoUrut() +"','";
+                        query +=  k.getHasilSuara()+"')";
         Database db = new Database();
         db.Connect();
         System.out.println(query);

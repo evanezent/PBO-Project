@@ -33,25 +33,14 @@ public class ControllerPemilih_Menu extends MouseAdapter implements ActionListen
             char pilihan = view.getPilihan();
             if ( pilihan == '1')
             {
-                kandidat.get(0).setJumlahSuara();
+                kandidat.get(0).setHasilSuara();
             }
             else if (pilihan == '2')
             {
-                kandidat.get(1).setJumlahSuara();
-            }
-            else if (pilihan == '3')
-            {
-                kandidat.get(2).setJumlahSuara();
-            }
-            else if (pilihan == '4')
-            {
-                kandidat.get(3).setJumlahSuara();
-            }
-            else
-            {
+                kandidat.get(1).setHasilSuara();
+            }else{
                 JOptionPane.showMessageDialog(null, "ERROR");
             }
         }
     }
-    
 }
