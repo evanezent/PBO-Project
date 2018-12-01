@@ -15,15 +15,14 @@ import javax.swing.JOptionPane;
  */
 public class ControllerEditPanitia extends MouseAdapter implements ActionListener {
     
-    private List<Model.Panitia> panitia;
+    private Panitia panitia;
     private View.GuiEditPanitia gui;
     private int idx;
 
-    public ControllerEditPanitia(int idx) {
+    public ControllerEditPanitia(Panitia p) {
         
-        this.idx = idx;
+        this.panitia = p;
         gui = new View.GuiEditPanitia();
-        panitia = new ArrayList();
         gui.AdapterEditPanitia(this);
         gui.ListenerEditPanitia(this);
         gui.setVisible(true);
@@ -40,8 +39,8 @@ public class ControllerEditPanitia extends MouseAdapter implements ActionListene
             String nama = gui.getTxNama();
             String user = gui.getTxUser();
             String pass = gui.getTxPass();
-            Panitia p = new Panitia(user,nama,pass);
-            panitia.add(p);
+            Panitia update = new Panitia(user,nama,pass);
+            panitia.updatePanitia(update, panitia);
             gui.dispose();
         }
         else
@@ -55,6 +54,6 @@ public class ControllerEditPanitia extends MouseAdapter implements ActionListene
     //get ArrayList<Panitia>//
 
     public Panitia getPanitia() {
-        return panitia.get(idx);
+        return panitia;
     }
 }

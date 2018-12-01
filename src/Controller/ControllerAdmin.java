@@ -7,6 +7,7 @@
 package Controller;
 import Model.*;
 import View.*;
+import Database.*;
 import java.util.*;
 import java.awt.event.*;
 import java.sql.SQLException;
@@ -19,9 +20,10 @@ import javax.swing.JOptionPane;
  */
 public class ControllerAdmin extends MouseAdapter implements ActionListener {
     
+    
     private GuiAdmin guiAdmin = new GuiAdmin();;
     private Admin modelAdmin = new Admin();
-    private Panitia panitia = new Panitia("", "", "");
+    private Panitia panitia = new Panitia("","","");
     private View.GuiEditPanitia EP;
 
     //Coment
@@ -60,30 +62,29 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
                 Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        else if (src.equals(guiAdmin.getDeletePanitia())) //DELETE BElom Jalan
-        {
+//        else if (src.equals(guiAdmin.getDeletePanitia())) //DELETE BElom Jalan
+//        {
+//            try {
+//                int idx = guiAdmin.getSelectedPanitia();
+//                Panitia p = panitia.getAllPanitia().get(idx);
+//                panitia.deletePanitia(p);
+//                guiAdmin.ResetShowAdmin();
+//                guiAdmin.setListPanitia(getDataPanitia());
+//            }
+        else if (src.equals(guiAdmin.getEditPanitia()))
+        {   
             try {
                 int idx = guiAdmin.getSelectedPanitia();
                 Panitia p = panitia.getAllPanitia().get(idx);
-                panitia.deletePanitia(p);
+                ControllerEditPanitia CEP = new ControllerEditPanitia(p);
                 guiAdmin.ResetShowAdmin();
                 guiAdmin.setListPanitia(getDataPanitia());
-            }
-//        else if (src.equals(guiAdmin.getEditPanitia()))
-//        {   
-//            int idx = guiAdmin.getSelectedPanitia();
-//            ControllerEditPanitia CEP = new ControllerEditPanitia(idx);
-//            Panitia p = CEP.getPanitia();
-//            panitia.remove(idx);
-//            panitia.add(idx, p);
-//            guiAdmin.ResetShowAdmin();
-//            guiAdmin.setListPanitia(getDataPanitia());
-//        }
-            catch (SQLException ex) {
+            } catch (SQLException ex) {
                 Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
+            
+        
         else if (src.equals(guiAdmin.getBtnHome()))
         {
             new ControllerLoginAdmin();

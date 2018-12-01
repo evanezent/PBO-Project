@@ -19,7 +19,8 @@ public class PBO {
      */
     public static void main(String[] args) throws SQLException {
         
-        new ControllerPanitia();
+        new ControllerAdmin();
         
+
     }
 }

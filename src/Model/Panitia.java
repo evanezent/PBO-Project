@@ -21,6 +21,8 @@ public class Panitia {
     List<Kandidat> kandidat = new ArrayList();
     Scanner input = new Scanner(System.in);
 
+    
+    
     public Panitia(String nama_panitia, String user_panitia, String pasw_panitia) {
         this.nama_panitia = nama_panitia;
         this.user_panitia = user_panitia;
@@ -59,7 +61,10 @@ public class Panitia {
         return s;
     }
     
-        public boolean checkUser(String uname, String pass) throws SQLException{
+    
+    
+    public boolean checkUser(String uname, String pass) throws SQLException{
+        
         boolean valid = false;
         Database db = new Database();
         db.Connect();
@@ -133,5 +138,26 @@ public class Panitia {
             System.out.println("DATABASE KOSONG");
         }
         return panitia;
+    }
+    
+    public void updatePanitia(Panitia p,Panitia update)
+    {
+        Database db = new Database();
+        db.Connect();
+        String query = "UPDATE `Panitia` SET ";
+               query += "`Nama Panitia` = '" + p.getNama_panitia()+"',";
+               query += "`Username` = '" + p.getUser_panitia()+"',";
+               query += "`Password` = '" + p.getPasw_panitia()+"'";
+               query += " WHERE `Username` = '" + update.getUser_panitia()+"';";
+               System.out.println(query);
+               if (db.Manipulate(query))
+               {
+                   System.out.println("Data berhasil di Update");
+               }
+               else
+               {
+                   System.out.println("Data gagal di Update");
+               }
+               db.Disconnect();
     }
 }
