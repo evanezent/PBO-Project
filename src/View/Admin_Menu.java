@@ -14,12 +14,12 @@ import javax.swing.JList;
  *
  * @author esber
  */
-public class GuiAdmin extends javax.swing.JFrame {
+public class Admin_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form GuiAdmin
      */
-    public GuiAdmin() {
+    public Admin_Menu() {
         initComponents();
     }
 

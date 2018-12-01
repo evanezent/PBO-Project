@@ -13,16 +13,16 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerEditPanitia extends MouseAdapter implements ActionListener {
+public class ControllerPanitia_Edit extends MouseAdapter implements ActionListener {
     
     private List<Model.Panitia> panitia;
-    private View.GuiEditPanitia gui;
+    private View.Panitia_Edit gui;
     private int idx;
 
-    public ControllerEditPanitia(int idx) {
+    public ControllerPanitia_Edit(int idx) {
         
         this.idx = idx;
-        gui = new View.GuiEditPanitia();
+        gui = new View.Panitia_Edit();
         panitia = new ArrayList();
         gui.AdapterEditPanitia(this);
         gui.ListenerEditPanitia(this);

@@ -12,12 +12,12 @@ import java.awt.event.*;
  *
  * @author esber
  */
-public class GuiEditPanitia extends javax.swing.JFrame {
+public class Panitia_Edit extends javax.swing.JFrame {
 
     /**
      * Creates new form GuiEditPanitia
      */
-    public GuiEditPanitia() {
+    public Panitia_Edit() {
         initComponents();
     }
 

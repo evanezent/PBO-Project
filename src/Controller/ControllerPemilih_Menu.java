@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerPemilih extends MouseAdapter implements ActionListener {
+public class ControllerPemilih_Menu extends MouseAdapter implements ActionListener {
 
-    private GuiMenuPemilih view = new GuiMenuPemilih();
+    private Pemilih_Menu view = new Pemilih_Menu();
     private List<Kandidat> kandidat = new ArrayList(); // List sambungan isi dari Panitia
 
-    public ControllerPemilih() {
+    public ControllerPemilih_Menu() {
         view.ListenerVoting(this);
         view.setVisible(true);
     }

@@ -13,12 +13,12 @@ import java.awt.event.*;
  *
  * @author Prana
  */
-public class LoginAdmin extends javax.swing.JFrame {
+public class Admin_Login extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public LoginAdmin() {
+    public Admin_Login() {
         initComponents();
     }
 

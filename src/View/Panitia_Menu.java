@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author esber
  */
-public class GuiMenuPanitia extends javax.swing.JFrame {
+public class Panitia_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form GuiMenuPanitia
      */
-    public GuiMenuPanitia() {
+    public Panitia_Menu() {
         initComponents();
     }
 

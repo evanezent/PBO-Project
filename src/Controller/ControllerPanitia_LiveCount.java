@@ -12,12 +12,12 @@ import java.awt.event.*;
  *
  * @author esber
  */
-public class Controller_LC extends MouseAdapter implements ActionListener {
+public class ControllerPanitia_LiveCount extends MouseAdapter implements ActionListener {
 
-    private GuiMenuLiveCount view = new GuiMenuLiveCount();
+    private Panitia_LiveCount view = new Panitia_LiveCount();
     private List<Kandidat> kandidat = new ArrayList();// isi didapat dari panitia dan pemilih
     private List<Pemilih> pemilih = new ArrayList(); //dapet dr Panitia
-    public Controller_LC() {
+    public ControllerPanitia_LiveCount() {
         view.ListenerLC(this);
         view.setVisible(true);
     }

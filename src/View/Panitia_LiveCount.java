@@ -13,12 +13,12 @@ import javax.swing.JTextField;
  *
  * @author Prana
  */
-public class GuiMenuLiveCount extends javax.swing.JFrame {
+public class Panitia_LiveCount extends javax.swing.JFrame {
 
     /**
      * Creates new form GuiMenuLiveCount
      */
-    public GuiMenuLiveCount() {
+    public Panitia_LiveCount() {
         initComponents();
     }
 

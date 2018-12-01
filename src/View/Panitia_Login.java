@@ -15,12 +15,12 @@ import javax.swing.JTextField;
  *
  * @author Prana
  */
-public class LoginPanitia extends javax.swing.JFrame {
+public class Panitia_Login extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public LoginPanitia() {
+    public Panitia_Login() {
         initComponents();
     }
 

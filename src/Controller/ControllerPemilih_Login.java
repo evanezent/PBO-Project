@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerLoginPemilih extends MouseAdapter implements ActionListener {
+public class ControllerPemilih_Login extends MouseAdapter implements ActionListener {
        
-    private View.LoginPemilih gui = new View.LoginPemilih();
+    private View.Pemilih_Login gui = new View.Pemilih_Login();
     private Panitia panitia;
 
-    public ControllerLoginPemilih() {
+    public ControllerPemilih_Login() {
         gui.ListenerLogPemilih(this);
         gui.setVisible(true);
     }
@@ -36,7 +36,7 @@ public class ControllerLoginPemilih extends MouseAdapter implements ActionListen
                 }
                 if (nik.equals(panitia.getPemilih().get(i).getNoKtp()))
                 {
-                    new ControllerPemilih();
+                    new ControllerPemilih_Menu();
                 }
                 else
                 {
@@ -50,12 +50,12 @@ public class ControllerLoginPemilih extends MouseAdapter implements ActionListen
         }
         else if (src.equals(gui.getL_Admin()))
         {
-            new ControllerLoginAdmin();
+            new ControllerAdmin_Login();
             gui.dispose();
         }
         else if (src.equals(gui.getL_Panitia()))
         {
-            new ControllerLoginPanitia();
+            new ControllerPanitia_Login();
             gui.dispose();
         }
     }

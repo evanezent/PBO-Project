@@ -17,15 +17,15 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerAdmin extends MouseAdapter implements ActionListener {
+public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener {
     
-    private GuiAdmin guiAdmin = new GuiAdmin();;
+    private Admin_Menu guiAdmin = new Admin_Menu();;
     private Admin modelAdmin = new Admin();
     private Panitia panitia = new Panitia("", "", "");
-    private View.GuiEditPanitia EP;
+    private View.Panitia_Edit EP;
 
     //Coment
-    public ControllerAdmin() {
+    public ControllerAdmin_Menu() {
 
         guiAdmin.AdminAdapter(this);
         guiAdmin.AdminListener(this);
@@ -57,7 +57,7 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
                 guiAdmin.ResetShowAdmin();
                 guiAdmin.setListPanitia(getDataPanitia());
             } catch (SQLException ex) {
-                Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else if (src.equals(guiAdmin.getDeletePanitia())) //DELETE BElom Jalan
@@ -80,13 +80,13 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
 //            guiAdmin.setListPanitia(getDataPanitia());
 //        }
             catch (SQLException ex) {
-                Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         }
         else if (src.equals(guiAdmin.getBtnHome()))
         {
-            new ControllerLoginAdmin();
+            new ControllerAdmin_Login();
             guiAdmin.dispose();
         }
         
@@ -103,7 +103,7 @@ public class ControllerAdmin extends MouseAdapter implements ActionListener {
                 Panitia p = panitia.getAllPanitia().get(idx);
                 guiAdmin.setTextPanitia(p.tampilPanitia());
             } catch (SQLException ex) {
-                Logger.getLogger(ControllerAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

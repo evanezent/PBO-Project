@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author esber
  */
-public class ControllerPanitia extends MouseAdapter implements ActionListener {
-    private View.GuiMenuPanitia guiPanitia = new View.GuiMenuPanitia();
+public class ControllerPanitia_Menu extends MouseAdapter implements ActionListener {
+    private View.Panitia_Menu guiPanitia = new View.Panitia_Menu();
     private Pemilih pemilih;
     private Panitia panitia;
     //gabisa jalan
-    public ControllerPanitia() {
+    public ControllerPanitia_Menu() {
         guiPanitia.TabAdapter(this);
         guiPanitia.TabListener(this);
         guiPanitia.setVisible(true);
@@ -40,7 +40,7 @@ public class ControllerPanitia extends MouseAdapter implements ActionListener {
         try {
                 loadPemilih();
             } catch (SQLException ex) {
-                Logger.getLogger(ControllerPanitia.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerPanitia_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }      
         
         if (src.equals(guiPanitia.getDelKandidat_btn()))
