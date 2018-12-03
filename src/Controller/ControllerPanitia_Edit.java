@@ -42,6 +42,7 @@ public class ControllerPanitia_Edit extends MouseAdapter implements ActionListen
             Panitia update = new Panitia(user,nama,pass);
             db.updatePanitia(update, panitia);
             gui.dispose();
+            new ControllerAdmin_Menu();
         }
         else
         {

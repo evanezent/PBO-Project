@@ -108,7 +108,16 @@ public class Panitia {
     {
         Database db = new Database();
         db.Connect();
-        String query = "DELETE FROM Panitia WHERE Username = '"+p.getUser_panitia()+"';";
+        String query = "DELETE FROM `Panitia` WHERE `Username` = '"+p.getUser_panitia()+"'";
+        System.out.println(query);  
+        if (db.Manipulate(query))
+        {
+            System.out.println("SUCCES");
+        }
+        else
+        {
+            System.out.println("FAILED");
+        }
         db.Disconnect();
     }
     

@@ -133,7 +133,7 @@ public class Panitia_Menu extends javax.swing.JFrame {
                         .addComponent(EditPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(AddPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AddPemilih_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -249,7 +249,7 @@ public class Panitia_Menu extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(tf_KandidatNomor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(AddKandidat_btn)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,22 +398,11 @@ public class Panitia_Menu extends javax.swing.JFrame {
         
         //Kandidat
         AddKandidat_btn.addActionListener(E);
-        DelPemilih_btn.addActionListener(E);
+//        DelKandi_btn.addActionListener(E);
         EditKandidat_btn.addActionListener(E);
         
         //Balik Menu
         btnHome.addActionListener(E);
-    }
-    
-    //Get Selected Row
-    public int row_Kandidat()
-    {
-        return TabelKandidat.getSelectedRow();
-    }
-    
-    public int row_Pemilih()
-    {
-        return TabelPemilih.getSelectedRow();
     }
     
     //Reset

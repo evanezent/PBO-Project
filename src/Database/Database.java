@@ -161,12 +161,12 @@ public class Database {
         Disconnect();
     }
     
-    public void delPemilih(Pemilih p) {
+    public void delPemilih(String selected) {
         Connect();
-        String query = "DELETE FROM `Pemilih` WHERE `No_KTP`='" + p.getNoKtp() + "'";
+        String query = "DELETE FROM `Pemilih` WHERE `No_KTP`='" + selected + "'";
         if (Manipulate(query)){
             for (Pemilih find : pemilih) {
-                if (find.getNoKtp().equals(p.getNoKtp())){
+                if (find.getNoKtp().equals(selected)){
                     pemilih.remove(find);
                     break;
                 }
@@ -186,6 +186,26 @@ public class Database {
                 if (find.getNoKtp().equals(ktp)){
                     find.setNama_pemilih(p.getNama_pemilih());
                     find.setNoKtp(p.getNoKtp());
+                    break;
+                }
+            }
+        }
+        Disconnect();
+    }
+    
+        public void updateKandidat(Kandidat k, String urutan) {
+        Connect();
+        String query = "UPDATE `Kandidat` SET";
+        query += " `Ketua`='" + k.getNamaKetua() + "',";
+        query += " `Wakil`='" + k.getNamaWakil() + "',";
+        query += " `no_Urut`='" + k.getNoUrut() + "'";
+        query += " WHERE `no_Urut`='" + urutan + "'";
+        if (Manipulate(query)){
+            for (Kandidat find : kandidat) {
+                if (find.getNoUrut().equals(urutan)){
+                    find.setNamaKetua(k.getNamaKetua());
+                    find.setNamaWakil(k.getNamaWakil());
+                    find.setNoUrut(k.getNoUrut());
                     break;
                 }
             }

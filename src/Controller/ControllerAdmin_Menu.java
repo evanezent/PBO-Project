@@ -68,28 +68,28 @@ public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener
                 Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-//        else if (src.equals(guiAdmin.getDeletePanitia())) //DELETE BElom Jalan
-//        {
-//            try {
-//                int idx = guiAdmin.getSelectedPanitia();
-//                Panitia p = panitia.getAllPanitia().get(idx);
-//                panitia.deletePanitia(p);
-//                guiAdmin.ResetShowAdmin();
-//                guiAdmin.setListPanitia(getDataPanitia());
-//            }
+        else if (src.equals(guiAdmin.getDeletePanitia())) //DELETE BElom Jalan
+        {
+            try {
+                int idx = guiAdmin.getSelectedPanitia();
+                Panitia p = panitia.getAllPanitia().get(idx);
+                panitia.getAllPanitia().get(idx).deletePanitia(p);
+                guiAdmin.dispose();
+                new ControllerAdmin_Menu();
+            }catch (SQLException ex) {
+                Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         else if (src.equals(guiAdmin.getEditPanitia()))
         {   
             try {
                 int idx = guiAdmin.getSelectedPanitia();
                 Panitia p = panitia.getAllPanitia().get(idx);
                 ControllerPanitia_Edit CEP = new ControllerPanitia_Edit(p);
-                guiAdmin.ResetShowAdmin();
-                guiAdmin.setListPanitia(getDataPanitia());
+                guiAdmin.setVisible(false);
             } catch (SQLException ex) {
                 Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            
+            }   
         }
             
         

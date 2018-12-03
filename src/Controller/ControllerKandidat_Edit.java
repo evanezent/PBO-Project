@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author esber
  */
-public class ControllerPemilih_Edit extends MouseAdapter implements ActionListener {
+public class ControllerKandidat_Edit extends MouseAdapter implements ActionListener {
 
-    private Pemilih pemilih;
+    private Kandidat kandidat;
     private Database db = new Database();
-    private Pemilih_Edit gui = new Pemilih_Edit();
+    private Kandidat_Edit gui = new Kandidat_Edit();
 
-    public ControllerPemilih_Edit(Pemilih p) {
-        this.pemilih = p;
+    public ControllerKandidat_Edit(Kandidat kandidat) {
+        this.kandidat = kandidat;
         gui.Listener(this);
         gui.setVisible(true);
     }
@@ -31,19 +31,18 @@ public class ControllerPemilih_Edit extends MouseAdapter implements ActionListen
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-        if(src.equals(gui.getDoneBtn()))
+        if (src.equals(gui.getBtnDone()))
         {
-            String nama = gui.getTfNama();
-            String ktp = gui.getTfNIK();
-            Pemilih q = new Pemilih(nama, ktp);
-            db.updatePemilih(q,pemilih.getNoKtp());
+            String ktp = gui.getNo();
+            String ketua = gui.getKetua();
+            String wakil = gui.getWakil();
+            Kandidat k = new Kandidat(ktp, ketua, wakil);
+            db.updateKandidat(k, kandidat.getNoUrut());
             gui.dispose();
-            
         }
         else
         {
             gui.dispose();
-            
         }
         new ControllerPanitia_Menu();
     }
