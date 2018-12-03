@@ -64,8 +64,8 @@ public class Kandidat {
 //        this.img = img;
 //    }
 
-    public void setHasilSuara() {
-        this.hasilSuara++;
+    public void setHasilSuara(double sum) {
+        this.hasilSuara=hasilSuara+sum;
     }
 
     public double getHasilSuara() {
@@ -73,26 +73,7 @@ public class Kandidat {
         return this.hasilSuara;
     }
     
-    public void updatejumlahSuara(Kandidat k)//EROR
-    {
-        Database db = new Database();
-        db.Connect();
-        String query = "UPDATE `Kandidat` SET";
-                        query += " `jumlahSuara` = '"+k.getHasilSuara()+"'";
-                        query += "WHERE `no_Urut` = '"+k.getNoUrut()+"';";
-        
-        System.out.println(query);
-        if (db.Manipulate(query))
-        {
-            System.out.println("UPDATE SUCCES");
-        }
-        else
-        {
-            System.out.println("FAILED");
-        }
-        db.Disconnect();
-    }
-    
+   
 
     public void insertKandidat(Kandidat k)
     {

@@ -193,7 +193,7 @@ public class Database {
         Disconnect();
     }
     
-        public void updateKandidat(Kandidat k, String urutan) {
+    public void updateKandidat(Kandidat k, String urutan) {
         Connect();
         String query = "UPDATE `Kandidat` SET";
         query += " `Ketua`='" + k.getNamaKetua() + "',";
@@ -211,6 +211,24 @@ public class Database {
             }
         }
         Disconnect();
+    }
+        public void updatejumlahSuara(Kandidat k)//EROR
+    {
+        Database db = new Database();
+        db.Connect();
+        String query = "UPDATE `Kandidat` SET";
+                        query += " `jumlahSuara` = '"+k.getHasilSuara()+"'";
+                        query += "WHERE `no_Urut` = '"+k.getNoUrut()+"';";
+        
+        if (db.Manipulate(query)){
+            for (Kandidat find : kandidat) {
+                if (find.getNoUrut().equals(k.getNoUrut())){
+                    find.setHasilSuara(k.getHasilSuara());
+                    break;
+                }
+            }
+        }
+        db.Disconnect();
     }
     
     

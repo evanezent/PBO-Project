@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
+import Database.Database;
 import Model.*;
 import View.*;
 import java.util.*;
@@ -16,10 +17,14 @@ import javax.swing.JOptionPane;
 public class ControllerPemilih_Menu extends MouseAdapter implements ActionListener {
 
     private Pemilih_Menu view = new Pemilih_Menu();
-    private List<Kandidat> kandidat = new ArrayList(); // List sambungan isi dari Panitia
+    private Database db = new Database();
+    private List<Kandidat> kandidat; // List sambungan isi dari Panitia
+    char pilihan;
+    
 
     public ControllerPemilih_Menu() {
 
+        kandidat = db.getDataKandidat();
         view.ListenerVoting(this);
         view.setVisible(true);
     }
@@ -31,21 +36,23 @@ public class ControllerPemilih_Menu extends MouseAdapter implements ActionListen
         Object src = e.getSource();
         if (src.equals(view.getPilihPemilih()))
         {
-            char pilihan = view.getPilihan();
+            pilihan = view.getPilihan();
             if ( pilihan == '1')
             {
-                kandidat.get(0).setHasilSuara();
+                kandidat.get(0).setHasilSuara(1);
                 Kandidat k = kandidat.get(0);
-                kandidat.get(0).updatejumlahSuara(k);
+                db.updatejumlahSuara(k);
+                
             }
             else if (pilihan == '2')
             {
-                kandidat.get(1).setHasilSuara();
+                kandidat.get(1).setHasilSuara(1);
                 Kandidat k = kandidat.get(1);
-                kandidat.get(1).updatejumlahSuara(k);
+                db.updatejumlahSuara(k);
             }else{
                 JOptionPane.showMessageDialog(null, "ERROR");
             }
+            new ControllerPanitia_LiveCount();
         }
     }
 
