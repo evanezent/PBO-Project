@@ -52,6 +52,7 @@ public class ControllerPemilih_Menu extends MouseAdapter implements ActionListen
             }else{
                 JOptionPane.showMessageDialog(null, "ERROR");
             }
+            view.dispose();
             new ControllerPanitia_LiveCount();
         }
     }
