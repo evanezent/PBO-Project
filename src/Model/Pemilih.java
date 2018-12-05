@@ -14,19 +14,29 @@ import java.util.*;
  */
 public class Pemilih {
     private String nama_pemilih,noKtp,tanggal_lahir,alamat;
+    private boolean status;
 
     public Pemilih(String nama_pemilih, String noKtp) {
         this.nama_pemilih = nama_pemilih;
         this.noKtp = noKtp;
     }
     
-    public Pemilih(String nama_pemilih, String noKtp, String tanggal_lahir, String alamat) {
+    public Pemilih(String nama_pemilih, String noKtp, String tanggal_lahir, String alamat, boolean status) {
         this.nama_pemilih = nama_pemilih;
         this.noKtp = noKtp;
         this.tanggal_lahir = tanggal_lahir;
         this.alamat = alamat;
+        this.status = status;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
     public String getNama_pemilih() {
         return nama_pemilih;
     }
@@ -77,7 +87,8 @@ public class Pemilih {
                 Pemilih p = new Pemilih(rs.getString("Nama Pemilih"),
                         rs.getString("No_KTP"),
                         rs.getString("tgl_lahir"),
-                        rs.getString("alamat"));
+                        rs.getString("alamat"),
+                        rs.getBoolean("status"));
                 pemilih.add(p);
             }
         }

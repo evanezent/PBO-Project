@@ -18,6 +18,6 @@ public class PBO {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        new ControllerPanitia_LiveCount();
+        new ControllerAdmin_Login();
     }
 }

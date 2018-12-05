@@ -63,7 +63,7 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             String no = guiPanitia.getTf_KTPPemilih();
             String ttl = guiPanitia.getTf_TTLPemilih();
             String alamat = guiPanitia.getTf_AlamatPemilih();
-            Pemilih p = new Pemilih(nama, no, ttl, alamat);
+            Pemilih p = new Pemilih(nama, no, ttl, alamat, false);
             db.insertPemilih(p);
             loadTablePemilih();
 

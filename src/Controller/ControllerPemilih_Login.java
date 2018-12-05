@@ -32,6 +32,7 @@ public class ControllerPemilih_Login extends MouseAdapter implements ActionListe
             String ktp = gui.getTfNIK();
             if (db.LoginPemilih(ktp))
             {
+                db.updateStatus(ktp);
                 new ControllerPemilih_Menu();
             }
             else

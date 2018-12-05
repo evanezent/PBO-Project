@@ -132,7 +132,7 @@ public class Database {
             rs = stmt.executeQuery(query);
             while (rs.next())
             {
-                pemilih.add(new Pemilih(rs.getString("Nama Pemilih"),rs.getString("No_KTP"),rs.getString("tgl_lahir"),rs.getString("alamat")));
+                pemilih.add(new Pemilih(rs.getString("Nama Pemilih"),rs.getString("No_KTP"),rs.getString("tgl_lahir"),rs.getString("alamat"),rs.getBoolean("status")));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
@@ -147,7 +147,8 @@ public class Database {
                         query +=  p.getNama_pemilih() +"','";
                         query +=  p.getNoKtp() +"','";
                         query +=  p.getTanggal_lahir() +"','";
-                        query +=  p.getAlamat()+"')";
+                        query +=  p.getAlamat() +"','";
+                        query +=  0 +"')";
         
         System.out.println(query);
         if (Manipulate(query))
@@ -232,11 +233,12 @@ public class Database {
     }
     
     
-    public void updatePanitia(Panitia p,Panitia update)
+    public void updatePanitia(Panitia p, Panitia update)
+            
     {
         Connect();
         String query = "UPDATE `Panitia` SET ";
-               query += "`Nama Panitia` = '" + p.getNama_panitia()+"',";
+               query += "`status` = '" + p.getNama_panitia()+"',";
                query += "`Username` = '" + p.getUser_panitia()+"',";
                query += "`Password` = '" + p.getPasw_panitia()+"'";
                query += " WHERE `Username` = '" + update.getUser_panitia()+"';";
@@ -307,7 +309,7 @@ public class Database {
         boolean cek = false;
         Connect();
         for (Pemilih find : pemilih) {
-            if (find.getNoKtp().equals(ktp)){
+            if ((find.getNoKtp().equals(ktp)) && (!find.isStatus())) {
                 cek = true;
                 break;
             }
@@ -316,6 +318,24 @@ public class Database {
         return cek;
     }
      
+        public void updateStatus(String ktp)
+    {
+        Connect();
+        String query = "UPDATE `Pemilih` SET ";
+               query += "`status` = '" + 1 +"'";
+               query += " WHERE `No_KTP` = '" + ktp+"';";
+               System.out.println(query);
+               if (Manipulate(query))
+               {
+                   System.out.println("Data berhasil di Update");
+               }
+               else
+               {
+                   System.out.println("Data gagal di Update");
+               }
+               Disconnect();
+    }
+    
     public ArrayList<Pemilih> getDataPemilih()
     {
         return pemilih;
