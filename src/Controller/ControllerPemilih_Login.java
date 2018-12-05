@@ -37,7 +37,7 @@ public class ControllerPemilih_Login extends MouseAdapter implements ActionListe
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "USER TIDAK ADA");
+                JOptionPane.showMessageDialog(null, "USER TIDAK ADA / SUDAH MEMILIH");
             }
         }
         else if (src.equals(gui.getL_Panitia()))
