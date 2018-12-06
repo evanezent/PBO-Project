@@ -50,7 +50,7 @@ public class ControllerPanitia_LiveCount extends MouseAdapter implements ActionL
         if (src.equals(view.getDoneBtn()))
         {
             view.dispose();
-            new ControllerPemilih_Login();
+            new Controller_HOME();
         }
     }
        

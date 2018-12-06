@@ -41,14 +41,18 @@ public class Pemilih_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel6.setBackground(new java.awt.Color(98, 10, 10));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(254, 254, 254));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Pilih");
         jLabel17.setToolTipText("");
         jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        pilihPemilih.setBackground(new java.awt.Color(1, 1, 1));
+        pilihPemilih.setForeground(new java.awt.Color(254, 254, 254));
         pilihPemilih.setText("Pilih");
         pilihPemilih.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,9 +61,11 @@ public class Pemilih_Menu extends javax.swing.JFrame {
         });
 
         KandidatBtnGroup.add(Kandidat2btn);
+        Kandidat2btn.setForeground(new java.awt.Color(254, 254, 254));
         Kandidat2btn.setText("Kandidat 2");
 
         KandidatBtnGroup.add(Kandidat1btn);
+        Kandidat1btn.setForeground(new java.awt.Color(254, 254, 254));
         Kandidat1btn.setText("Kandidat 1");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image-capres2.png"))); // NOI18N

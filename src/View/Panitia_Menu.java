@@ -62,14 +62,25 @@ public class Panitia_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Tab.setBackground(new java.awt.Color(254, 254, 254));
+        Tab.setForeground(new java.awt.Color(254, 254, 254));
+
+        jPanel1.setBackground(new java.awt.Color(98, 10, 10));
+
+        jLabel5.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
         jLabel5.setText("PEMILIH");
 
+        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
         jLabel6.setText("Nama Pemilih");
 
+        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
         jLabel7.setText("Nomor KTP");
 
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
         jLabel8.setText("Tanggal Lahir");
 
+        jLabel9.setForeground(new java.awt.Color(254, 254, 254));
         jLabel9.setText("Alamat");
 
         tf_AlamatPemilih.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +89,8 @@ public class Panitia_Menu extends javax.swing.JFrame {
             }
         });
 
+        AddPemilih_btn.setBackground(new java.awt.Color(1, 1, 1));
+        AddPemilih_btn.setForeground(new java.awt.Color(254, 254, 254));
         AddPemilih_btn.setText("Tambah");
 
         TabelPemilih.setModel(new javax.swing.table.DefaultTableModel(
@@ -90,10 +103,15 @@ public class Panitia_Menu extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TabelPemilih);
 
+        EditPemilih_btn.setBackground(new java.awt.Color(1, 1, 1));
+        EditPemilih_btn.setForeground(new java.awt.Color(254, 254, 254));
         EditPemilih_btn.setText("Edit");
 
+        DelPemilih_btn.setBackground(new java.awt.Color(1, 1, 1));
+        DelPemilih_btn.setForeground(new java.awt.Color(254, 254, 254));
         DelPemilih_btn.setText("Hapus");
 
+        btnHome.setForeground(new java.awt.Color(254, 254, 254));
         btnHome.setText("Home");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -172,12 +190,19 @@ public class Panitia_Menu extends javax.swing.JFrame {
 
         Tab.addTab("Pemilih", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(98, 10, 10));
+
+        jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
         jLabel1.setText("KANDIDAT");
 
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
         jLabel2.setText("Nama Ketua");
 
+        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("Nama Wakil");
 
+        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
         jLabel4.setText("Nomor Urut");
 
         tf_KandidatKetua.addActionListener(new java.awt.event.ActionListener() {
@@ -196,8 +221,11 @@ public class Panitia_Menu extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TabelKandidat);
 
+        EditKandidat_btn.setForeground(new java.awt.Color(254, 254, 254));
         EditKandidat_btn.setText("Edit");
 
+        AddKandidat_btn.setBackground(new java.awt.Color(1, 1, 1));
+        AddKandidat_btn.setForeground(new java.awt.Color(254, 254, 254));
         AddKandidat_btn.setText("Tambah");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -222,7 +250,7 @@ public class Panitia_Menu extends javax.swing.JFrame {
                                     .addComponent(tf_KandidatKetua)
                                     .addComponent(tf_KandidatWakil, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                                     .addComponent(tf_KandidatNomor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(AddKandidat_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(AddKandidat_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))

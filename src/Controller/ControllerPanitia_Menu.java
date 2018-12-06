@@ -104,7 +104,7 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
         else if (src.equals(guiPanitia.getBtnHome()))
         {
             guiPanitia.dispose();
-            new ControllerPanitia_Login();
+            new Controller_HOME();
         }
         
     }

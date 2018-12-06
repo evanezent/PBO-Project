@@ -53,18 +53,26 @@ public class Admin_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(98, 10, 10));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setForeground(new java.awt.Color(253, 251, 251));
+        jPanel1.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
         jLabel1.setText("MENU ADMIN");
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
         jLabel2.setText("Tambah Panitia");
 
+        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("Nama Panitia");
 
+        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
         jLabel4.setText("Username");
 
+        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
         jLabel5.setText("Password");
 
         tfNama.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +82,7 @@ public class Admin_Menu extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
         jLabel6.setText("Data Panitia");
 
         jScrollPane1.setViewportView(ListPanitia);
@@ -82,8 +91,12 @@ public class Admin_Menu extends javax.swing.JFrame {
         txPanitia.setRows(5);
         jScrollPane2.setViewportView(txPanitia);
 
+        deletePanitia.setBackground(new java.awt.Color(1, 1, 1));
+        deletePanitia.setForeground(new java.awt.Color(254, 254, 254));
         deletePanitia.setText("Delete");
 
+        editPanitia.setBackground(new java.awt.Color(1, 1, 1));
+        editPanitia.setForeground(new java.awt.Color(254, 254, 254));
         editPanitia.setText("Edit");
         editPanitia.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -91,8 +104,12 @@ public class Admin_Menu extends javax.swing.JFrame {
             }
         });
 
+        addPanitia.setBackground(new java.awt.Color(1, 1, 1));
+        addPanitia.setForeground(new java.awt.Color(254, 254, 254));
         addPanitia.setText("Add");
 
+        btnHome.setBackground(new java.awt.Color(1, 1, 1));
+        btnHome.setForeground(new java.awt.Color(254, 254, 254));
         btnHome.setText("HOME");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

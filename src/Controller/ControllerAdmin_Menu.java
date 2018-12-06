@@ -68,7 +68,7 @@ public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener
                 Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        else if (src.equals(guiAdmin.getDeletePanitia())) //DELETE BElom Jalan
+        else if (src.equals(guiAdmin.getDeletePanitia())) 
         {
             try {
                 int idx = guiAdmin.getSelectedPanitia();
@@ -95,7 +95,7 @@ public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener
         
         else if (src.equals(guiAdmin.getBtnHome()))
         {
-            new ControllerAdmin_Login();
+            new Controller_HOME();
             guiAdmin.dispose();
         }
         

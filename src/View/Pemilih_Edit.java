@@ -43,11 +43,16 @@ public class Pemilih_Edit extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(98, 10, 10));
+
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
         jLabel1.setText("EDIT PEMILIH");
 
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
         jLabel2.setText("Nama");
 
+        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("NIK");
 
         tfNama.addActionListener(new java.awt.event.ActionListener() {
@@ -62,8 +67,12 @@ public class Pemilih_Edit extends javax.swing.JFrame {
             }
         });
 
+        CancelBtn.setBackground(new java.awt.Color(1, 1, 1));
+        CancelBtn.setForeground(new java.awt.Color(254, 254, 254));
         CancelBtn.setText("Cancel");
 
+        DoneBtn.setBackground(new java.awt.Color(1, 1, 1));
+        DoneBtn.setForeground(new java.awt.Color(254, 254, 254));
         DoneBtn.setText("Done");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -74,9 +83,10 @@ public class Pemilih_Edit extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(CancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DoneBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DoneBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

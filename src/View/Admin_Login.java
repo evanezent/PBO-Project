@@ -44,18 +44,23 @@ public class Admin_Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setBackground(new java.awt.Color(98, 10, 10));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
         jLabel1.setText("Selamat Datang di Aplikasi Pemilihan Umum");
         jLabel1.setToolTipText("");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
         jLabel2.setText("Login Sebagai Admin");
 
+        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("Username");
 
+        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
         jLabel4.setText("Password");
 
         tf_uAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +75,8 @@ public class Admin_Login extends javax.swing.JFrame {
             }
         });
 
+        btnLoginAdmin.setBackground(new java.awt.Color(5, 5, 5));
+        btnLoginAdmin.setForeground(new java.awt.Color(254, 254, 254));
         btnLoginAdmin.setText("Login");
         btnLoginAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
