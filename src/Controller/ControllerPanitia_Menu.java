@@ -65,6 +65,7 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             String alamat = guiPanitia.getTf_AlamatPemilih();
             Pemilih p = new Pemilih(nama, no, ttl, alamat, false);
             db.insertPemilih(p);
+            guiPanitia.resetPemiilih();
             loadTablePemilih();
 
         } 
@@ -75,11 +76,10 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             Kandidat k = new Kandidat(no, ketua, wakil);
             guiPanitia.resetKandidat();
             db.insertKandidat(k);
+            guiPanitia.resetKandidat();
             loadTableKandidat();
         } 
         else if (src.equals(guiPanitia.getDelPemilih_btn())) {
-//            System.out.println("DELETE BUTTON PRESSED");
-//            System.out.println("index" + selectedIdx);
 
             Pemilih p = pemilih.get(selectedIdx);
             System.out.println(p.getNoKtp());
