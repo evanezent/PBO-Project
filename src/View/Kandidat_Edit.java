@@ -44,20 +44,20 @@ public class Kandidat_Edit extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(98, 10, 10));
+        jPanel1.setBackground(new java.awt.Color(254, 254, 254));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("EDIT KANDIDAT");
 
-        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Nomor Urut");
 
-        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
         jLabel3.setText("Nama Ketua");
 
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Nama Wakil");
 
         btnDone.setBackground(new java.awt.Color(1, 1, 1));

@@ -140,6 +140,8 @@ public class Database {
         Disconnect();
     }
     
+    
+    //INSERT
     public void insertPemilih(Pemilih p)
     {
         Connect();
@@ -162,6 +164,46 @@ public class Database {
         Disconnect();
     }
     
+    
+    public void insertKandidat(Kandidat k)
+    {
+        Connect();
+        String query = "INSERT INTO `Kandidat` VALUES('";
+                        query +=  k.getNamaKetua() +"','";
+                        query +=  k.getNamaWakil() +"','";
+                        query +=  k.getNoUrut() +"','";
+                        query +=  k.getHasilSuara()+"')";
+        
+        System.out.println(query);
+        if (Manipulate(query))
+        {
+            kandidat.add(k);
+        }
+        else
+        {
+            System.out.println("FAILED");
+        }
+          Disconnect();
+    }
+    
+    
+    //DELETE
+    public void deletePanitia(Panitia p)
+    {
+        Connect();
+        String query = "DELETE FROM `Panitia` WHERE Username = '"+p.getUser_panitia()+"';";
+        if (Manipulate(query))
+        {
+            System.out.println("TERHAPUS");
+        }
+        else
+        {
+            System.out.println("GAGAL");
+    
+        }
+        Disconnect();
+    }
+    
     public void delPemilih(String selected) {
         Connect();
         String query = "DELETE FROM `Pemilih` WHERE `No_KTP`='" + selected + "'";
@@ -176,6 +218,37 @@ public class Database {
         Disconnect();
     }
     
+     public void delKandidat(Kandidat k) {
+        Connect();
+        String query = "DELETE FROM `Kandidat` WHERE `no_Urut`='" + k.getNoUrut() + "'";
+        if (Manipulate(query)){
+            for (Kandidat find : kandidat) {
+                if (find.getNoUrut().equals(k.getNoUrut())){
+                    kandidat.remove(find);
+                    break;
+                }
+            }
+        }
+        Disconnect();
+    }
+     
+     
+     //LOGIN
+    public boolean LoginPemilih(String ktp){
+        boolean cek = false;
+        Connect();
+        for (Pemilih find : pemilih) {
+            if ((find.getNoKtp().equals(ktp)) && (!find.isStatus())) {
+                cek = true;
+                break;
+            }
+        }
+        Disconnect();
+        return cek;
+    }
+     
+    
+    //UPDATE
     public void updatePemilih(Pemilih p, String ktp) {
         Connect();
         String query = "UPDATE `Pemilih` SET";
@@ -254,71 +327,7 @@ public class Database {
                Disconnect();
     }
     
-    public void deletePanitia(Panitia p)
-    {
-        Connect();
-        String query = "DELETE FROM `Panitia` WHERE Username = '"+p.getUser_panitia()+"';";
-        if (Manipulate(query))
-        {
-            System.out.println("TERHAPUS");
-        }
-        else
-        {
-            System.out.println("GAGAL");
-    
-        }
-        Disconnect();
-    }
-    public void insertKandidat(Kandidat k)
-    {
-        Connect();
-        String query = "INSERT INTO `Kandidat` VALUES('";
-                        query +=  k.getNamaKetua() +"','";
-                        query +=  k.getNamaWakil() +"','";
-                        query +=  k.getNoUrut() +"','";
-                        query +=  k.getHasilSuara()+"')";
-        
-        System.out.println(query);
-        if (Manipulate(query))
-        {
-            kandidat.add(k);
-        }
-        else
-        {
-            System.out.println("FAILED");
-        }
-          Disconnect();
-    }
-    
-     public void delKandidat(Kandidat k) {
-        Connect();
-        String query = "DELETE FROM `Kandidat` WHERE `no_Urut`='" + k.getNoUrut() + "'";
-        if (Manipulate(query)){
-            for (Kandidat find : kandidat) {
-                if (find.getNoUrut().equals(k.getNoUrut())){
-                    kandidat.remove(find);
-                    break;
-                }
-            }
-        }
-        Disconnect();
-    }
-     
-     
-    public boolean LoginPemilih(String ktp){
-        boolean cek = false;
-        Connect();
-        for (Pemilih find : pemilih) {
-            if ((find.getNoKtp().equals(ktp)) && (!find.isStatus())) {
-                cek = true;
-                break;
-            }
-        }
-        Disconnect();
-        return cek;
-    }
-     
-        public void updateStatus(String ktp)
+    public void updateStatus(String ktp)
     {
         Connect();
         String query = "UPDATE `Pemilih` SET ";
@@ -336,6 +345,32 @@ public class Database {
                Disconnect();
     }
     
+    //CHECKING
+    public boolean cekPemilih(String user)
+    {
+        for (Pemilih p : pemilih)
+        {
+            if ( user.equals(p.getNoKtp()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean cekKandidat(String noUrut)
+    {
+        for (Kandidat k : kandidat)
+        {
+            if ( noUrut.equals(k.getNoUrut()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    //LIST
     public ArrayList<Pemilih> getDataPemilih()
     {
         return pemilih;

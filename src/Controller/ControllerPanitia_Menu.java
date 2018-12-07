@@ -30,8 +30,8 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
     private int selectedIdx ;
     public ControllerPanitia_Menu() {
 
-        guiPanitia.TabAdapter(this);
-        guiPanitia.TabListener(this);
+        guiPanitia.Adapter(this);
+        guiPanitia.Listener(this);
         guiPanitia.setVisible(true);
         pemilih = db.getDataPemilih();
         kandidat = db.getDataKandidat();
@@ -63,21 +63,39 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             String no = guiPanitia.getTf_KTPPemilih();
             String ttl = guiPanitia.getTf_TTLPemilih();
             String alamat = guiPanitia.getTf_AlamatPemilih();
-            Pemilih p = new Pemilih(nama, no, ttl, alamat, false);
-            db.insertPemilih(p);
-            guiPanitia.resetPemiilih();
-            loadTablePemilih();
+            if (db.cekPemilih(no))
+            {
+                JOptionPane.showMessageDialog(null, "SUDAH ADA");
+                guiPanitia.resetPemiilih();
+            }
+            else
+            {
+                Pemilih p = new Pemilih(nama, no, ttl, alamat, false);
+                db.insertPemilih(p);
+                guiPanitia.resetPemiilih();
+                loadTablePemilih();
+            }
+            
 
         } 
         else if (src.equals(guiPanitia.getAddKandidat_btn())) {
             String no = guiPanitia.getTf_KandidatNomor();
             String ketua = guiPanitia.getTf_KandidatKetua();
             String wakil = guiPanitia.getTf_KandidatWakil();
-            Kandidat k = new Kandidat(no, ketua, wakil);
-            guiPanitia.resetKandidat();
-            db.insertKandidat(k);
-            guiPanitia.resetKandidat();
-            loadTableKandidat();
+            if(db.cekKandidat(no))
+            {
+                JOptionPane.showMessageDialog(null, "SUDAH ADA");
+                guiPanitia.resetKandidat();
+            }
+            else
+            {
+                Kandidat k = new Kandidat(no, ketua, wakil);
+                guiPanitia.resetKandidat();
+                db.insertKandidat(k);
+                guiPanitia.resetKandidat();
+                loadTableKandidat();
+            }
+            
         } 
         else if (src.equals(guiPanitia.getDelPemilih_btn())) {
 
@@ -85,14 +103,25 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             System.out.println(p.getNoKtp());
             db.delPemilih(p.getNoKtp());
             guiPanitia.resetPemiilih();
+            loadTablePemilih(); 
            
         } 
-        else if (src.equals(guiPanitia.getEditPemilih_btn())) {
-            
+        else if (src.equals(guiPanitia.getDelPemilih_btn())) {
+
             Pemilih p = pemilih.get(selectedIdx);
-            ControllerPemilih_Edit view = new ControllerPemilih_Edit(p);
-            guiPanitia.dispose();
+            System.out.println(p.getNoKtp());
+            db.delPemilih(p.getNoKtp());
             guiPanitia.resetPemiilih();
+            loadTablePemilih(); 
+           
+        } 
+        else if (src.equals(guiPanitia.getDelKandidat_btn())) {
+            
+            Kandidat k = kandidat.get(selectedIdx);
+            System.out.println(k.getNoUrut());
+            db.delKandidat(k);
+            guiPanitia.resetPemiilih();
+            loadTableKandidat();
         }
         else if (src.equals(guiPanitia.getEditKandidat_btn()))
         {

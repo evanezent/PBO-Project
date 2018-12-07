@@ -30,10 +30,10 @@ public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener
     public ControllerAdmin_Menu() {
 
         try {
-            guiAdmin.AdminAdapter(this);
-            guiAdmin.AdminListener(this);
+            guiAdmin.Adapter(this);
+            guiAdmin.Listener(this);
             guiAdmin.setVisible(true);
-            guiAdmin.ResetShowAdmin();
+            guiAdmin.ResetView();
             guiAdmin.setListPanitia(getDataPanitia());
         } catch (SQLException ex) {
             Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -60,10 +60,19 @@ public class ControllerAdmin_Menu extends MouseAdapter implements ActionListener
                 String nama = guiAdmin.getTFNama();
                 String user = guiAdmin.getTFUser();
                 String pass = guiAdmin.getTFPw();
-                Panitia p = new Panitia(nama, user, pass);
-                panitia.insertPanitia(p);
-                guiAdmin.ResetShowAdmin();
-                guiAdmin.setListPanitia(getDataPanitia());
+                if (panitia.cekPanitia(user))
+                {
+                    JOptionPane.showMessageDialog(null, "SUDAH ADA");
+                    guiAdmin.ResetView();
+                }
+                else
+                {
+                    Panitia p = new Panitia(nama, user, pass);
+                    panitia.insertPanitia(p);
+                    guiAdmin.ResetView();
+                    guiAdmin.setListPanitia(getDataPanitia());
+                }
+
             } catch (SQLException ex) {
                 Logger.getLogger(ControllerAdmin_Menu.class.getName()).log(Level.SEVERE, null, ex);
             }

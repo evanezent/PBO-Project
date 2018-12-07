@@ -32,6 +32,7 @@ public class ControllerPemilih_Login extends MouseAdapter implements ActionListe
             String ktp = gui.getTfNIK();
             if (db.LoginPemilih(ktp))
             {
+                gui.dispose();
                 db.updateStatus(ktp);
                 new ControllerPemilih_Menu();
             }
@@ -48,6 +49,11 @@ public class ControllerPemilih_Login extends MouseAdapter implements ActionListe
         else if (src.equals(gui.getL_Admin()))
         {
             new ControllerAdmin_Login();
+            gui.dispose();
+        }
+        else
+        {
+            new Controller_HOME();
             gui.dispose();
         }
     }

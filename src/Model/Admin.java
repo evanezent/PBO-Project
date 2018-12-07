@@ -49,4 +49,5 @@ public class Admin{
     public void hapus(int i) {
         panitia.remove(i);
     }
+    
 }

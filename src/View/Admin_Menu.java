@@ -14,7 +14,7 @@ import javax.swing.JList;
  *
  * @author esber
  */
-public class Admin_Menu extends javax.swing.JFrame {
+public class Admin_Menu extends javax.swing.JFrame implements implemenable {
 
     /**
      * Creates new form GuiAdmin
@@ -53,26 +53,26 @@ public class Admin_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(98, 10, 10));
+        jPanel1.setBackground(new java.awt.Color(254, 254, 254));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setForeground(new java.awt.Color(253, 251, 251));
         jPanel1.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("MENU ADMIN");
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Tambah Panitia");
 
-        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
         jLabel3.setText("Nama Panitia");
 
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Username");
 
-        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel5.setForeground(new java.awt.Color(1, 1, 1));
         jLabel5.setText("Password");
 
         tfNama.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +82,7 @@ public class Admin_Menu extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel6.setForeground(new java.awt.Color(1, 1, 1));
         jLabel6.setText("Data Panitia");
 
         jScrollPane1.setViewportView(ListPanitia);
@@ -243,7 +243,7 @@ public class Admin_Menu extends javax.swing.JFrame {
     }
     
     //Listener and Adapter
-    public void AdminListener(ActionListener AL)
+    public void Listener(ActionListener AL)
     {
         addPanitia.addActionListener(AL);
         deletePanitia.addActionListener(AL);
@@ -251,13 +251,13 @@ public class Admin_Menu extends javax.swing.JFrame {
         btnHome.addActionListener(AL);
     }
     
-    public void AdminAdapter(MouseAdapter ME)
+    public void Adapter(MouseAdapter ME)
     {
         ListPanitia.addMouseListener(ME);
     }
     
     //Reset Tampilan
-    public void ResetShowAdmin()
+    public void ResetView()
     {
         tfNama.setText("");
         tfUser.setText("");

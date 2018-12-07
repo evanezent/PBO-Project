@@ -19,7 +19,7 @@ public class ControllerAdmin_Login extends MouseAdapter implements ActionListene
 
     public ControllerAdmin_Login() {
 
-        gui.listenerLoginAdmin(this);
+        gui.Listener(this);
         gui.setVisible(true);
     }
 
@@ -47,6 +47,11 @@ public class ControllerAdmin_Login extends MouseAdapter implements ActionListene
         else if (src.equals(gui.getL_asPemilih()))
         {
             new ControllerPemilih_Login();
+            gui.dispose();
+        }
+        else
+        {
+            new Controller_HOME();
             gui.dispose();
         }
     }  

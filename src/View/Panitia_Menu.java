@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author esber
  */
-public class Panitia_Menu extends javax.swing.JFrame {
+public class Panitia_Menu extends javax.swing.JFrame implements implemenable{
 
     /**
      * Creates new form Panitia_Menu
@@ -59,28 +59,29 @@ public class Panitia_Menu extends javax.swing.JFrame {
         TabelKandidat = new javax.swing.JTable();
         EditKandidat_btn = new javax.swing.JButton();
         AddKandidat_btn = new javax.swing.JButton();
+        DelKandidat_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Tab.setBackground(new java.awt.Color(254, 254, 254));
+        Tab.setBackground(new java.awt.Color(1, 1, 1));
         Tab.setForeground(new java.awt.Color(254, 254, 254));
 
-        jPanel1.setBackground(new java.awt.Color(98, 10, 10));
+        jPanel1.setBackground(new java.awt.Color(254, 254, 254));
 
         jLabel5.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel5.setForeground(new java.awt.Color(1, 1, 1));
         jLabel5.setText("PEMILIH");
 
-        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel6.setForeground(new java.awt.Color(1, 1, 1));
         jLabel6.setText("Nama Pemilih");
 
-        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel7.setForeground(new java.awt.Color(1, 1, 1));
         jLabel7.setText("Nomor KTP");
 
-        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setForeground(new java.awt.Color(1, 1, 1));
         jLabel8.setText("Tanggal Lahir");
 
-        jLabel9.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel9.setForeground(new java.awt.Color(1, 1, 1));
         jLabel9.setText("Alamat");
 
         tf_AlamatPemilih.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +112,7 @@ public class Panitia_Menu extends javax.swing.JFrame {
         DelPemilih_btn.setForeground(new java.awt.Color(254, 254, 254));
         DelPemilih_btn.setText("Hapus");
 
+        btnHome.setBackground(new java.awt.Color(1, 1, 1));
         btnHome.setForeground(new java.awt.Color(254, 254, 254));
         btnHome.setText("Home");
 
@@ -190,19 +192,19 @@ public class Panitia_Menu extends javax.swing.JFrame {
 
         Tab.addTab("Pemilih", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(98, 10, 10));
+        jPanel2.setBackground(new java.awt.Color(254, 254, 254));
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("KANDIDAT");
 
-        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Nama Ketua");
 
-        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
         jLabel3.setText("Nama Wakil");
 
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Nomor Urut");
 
         tf_KandidatKetua.addActionListener(new java.awt.event.ActionListener() {
@@ -221,12 +223,17 @@ public class Panitia_Menu extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TabelKandidat);
 
+        EditKandidat_btn.setBackground(new java.awt.Color(1, 1, 1));
         EditKandidat_btn.setForeground(new java.awt.Color(254, 254, 254));
         EditKandidat_btn.setText("Edit");
 
         AddKandidat_btn.setBackground(new java.awt.Color(1, 1, 1));
         AddKandidat_btn.setForeground(new java.awt.Color(254, 254, 254));
         AddKandidat_btn.setText("Tambah");
+
+        DelKandidat_btn.setBackground(new java.awt.Color(1, 1, 1));
+        DelKandidat_btn.setForeground(new java.awt.Color(254, 254, 254));
+        DelKandidat_btn.setText("Hapus");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -257,6 +264,8 @@ public class Panitia_Menu extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(DelKandidat_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EditKandidat_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
@@ -282,7 +291,9 @@ public class Panitia_Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(EditKandidat_btn)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditKandidat_btn)
+                    .addComponent(DelKandidat_btn))
                 .addContainerGap())
         );
 
@@ -320,6 +331,7 @@ public class Panitia_Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddKandidat_btn;
     private javax.swing.JButton AddPemilih_btn;
+    private javax.swing.JButton DelKandidat_btn;
     private javax.swing.JButton DelPemilih_btn;
     private javax.swing.JButton EditKandidat_btn;
     private javax.swing.JButton EditPemilih_btn;
@@ -376,7 +388,10 @@ public class Panitia_Menu extends javax.swing.JFrame {
         return btnHome;
     }
 
-    //Get Text
+    public JButton getDelKandidat_btn() {
+        return DelKandidat_btn;
+    }
+
     
     //Pemilih
     
@@ -411,13 +426,13 @@ public class Panitia_Menu extends javax.swing.JFrame {
     }
     
     //Adapter n Listener
-    public void TabAdapter(MouseAdapter ME)
+    public void Adapter(MouseAdapter ME)
     {
         TabelPemilih.addMouseListener(ME);
         TabelKandidat.addMouseListener(ME);
     }
     
-    public void TabListener(ActionListener E)
+    public void Listener(ActionListener E)
     {
         //Pemilih
         AddPemilih_btn.addActionListener(E);
@@ -426,7 +441,7 @@ public class Panitia_Menu extends javax.swing.JFrame {
         
         //Kandidat
         AddKandidat_btn.addActionListener(E);
-//        DelKandi_btn.addActionListener(E);
+        DelKandidat_btn.addActionListener(E);
         EditKandidat_btn.addActionListener(E);
         
         //Balik Menu
@@ -484,6 +499,11 @@ public class Panitia_Menu extends javax.swing.JFrame {
     public int getSelectedKandidat()
     {
         return TabelKandidat.getSelectedRow();
+    }
+
+    @Override
+    public void ResetView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -41,17 +41,18 @@ public class Pemilih_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel6.setBackground(new java.awt.Color(98, 10, 10));
+        jPanel6.setBackground(new java.awt.Color(254, 254, 254));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel17.setForeground(new java.awt.Color(1, 1, 1));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Pilih");
         jLabel17.setToolTipText("");
         jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         pilihPemilih.setBackground(new java.awt.Color(1, 1, 1));
+        pilihPemilih.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
         pilihPemilih.setForeground(new java.awt.Color(254, 254, 254));
         pilihPemilih.setText("Pilih");
         pilihPemilih.addActionListener(new java.awt.event.ActionListener() {
@@ -61,11 +62,11 @@ public class Pemilih_Menu extends javax.swing.JFrame {
         });
 
         KandidatBtnGroup.add(Kandidat2btn);
-        Kandidat2btn.setForeground(new java.awt.Color(254, 254, 254));
+        Kandidat2btn.setForeground(new java.awt.Color(1, 1, 1));
         Kandidat2btn.setText("Kandidat 2");
 
         KandidatBtnGroup.add(Kandidat1btn);
-        Kandidat1btn.setForeground(new java.awt.Color(254, 254, 254));
+        Kandidat1btn.setForeground(new java.awt.Color(1, 1, 1));
         Kandidat1btn.setText("Kandidat 1");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image-capres2.png"))); // NOI18N
@@ -76,24 +77,30 @@ public class Pemilih_Menu extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(43, 43, 43))
-                    .addComponent(pilihPemilih, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(Kandidat1btn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Kandidat2btn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addGap(43, 43, 43))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(pilihPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(Kandidat1btn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Kandidat2btn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(74, 74, 74)))))
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,8 +115,8 @@ public class Pemilih_Menu extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Kandidat2btn)
                     .addComponent(Kandidat1btn))
-                .addGap(65, 65, 65)
-                .addComponent(pilihPemilih)
+                .addGap(53, 53, 53)
+                .addComponent(pilihPemilih, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 

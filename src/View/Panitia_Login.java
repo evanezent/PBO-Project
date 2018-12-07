@@ -43,27 +43,29 @@ public class Panitia_Login extends javax.swing.JFrame {
         loginPanitia = new javax.swing.JButton();
         LPemilih = new javax.swing.JButton();
         LAdmin = new javax.swing.JButton();
+        homeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(98, 10, 10));
+        jPanel2.setBackground(new java.awt.Color(254, 254, 254));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setForeground(new java.awt.Color(254, 254, 254));
+        jPanel2.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Selamat Datang di Aplikasi Pemilihan Umum");
         jLabel1.setToolTipText("");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Login Sebagai Panitia");
 
-        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
         jLabel3.setText("Username");
 
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Password");
 
         uPanitia.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +89,8 @@ public class Panitia_Login extends javax.swing.JFrame {
             }
         });
 
+        LPemilih.setBackground(new java.awt.Color(1, 1, 1));
+        LPemilih.setForeground(new java.awt.Color(254, 254, 254));
         LPemilih.setText("Login Sebagai Pemilih");
         LPemilih.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +98,18 @@ public class Panitia_Login extends javax.swing.JFrame {
             }
         });
 
+        LAdmin.setBackground(new java.awt.Color(1, 1, 1));
+        LAdmin.setForeground(new java.awt.Color(254, 254, 254));
         LAdmin.setText("Login Sebagai Admin");
+
+        homeBtn.setBackground(new java.awt.Color(1, 1, 1));
+        homeBtn.setForeground(new java.awt.Color(254, 254, 254));
+        homeBtn.setText("HOME");
+        homeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -107,6 +122,8 @@ public class Panitia_Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LAdmin)
+                .addGap(31, 31, 31)
+                .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LPemilih)
                 .addContainerGap())
@@ -148,7 +165,8 @@ public class Panitia_Login extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LPemilih)
-                    .addComponent(LAdmin))
+                    .addComponent(LAdmin)
+                    .addComponent(homeBtn))
                 .addContainerGap())
         );
 
@@ -182,6 +200,10 @@ public class Panitia_Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pPanitiaActionPerformed
 
+    private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_homeBtnActionPerformed
+
     //Button
     
     public JButton getLAdmin() {
@@ -196,6 +218,11 @@ public class Panitia_Login extends javax.swing.JFrame {
         return loginPanitia;
     }
 
+    public JButton getHomeBtn() {
+        return homeBtn;
+    }
+
+    
     //get Text
     
     public String getpPanitia() {
@@ -212,12 +239,14 @@ public class Panitia_Login extends javax.swing.JFrame {
         loginPanitia.addActionListener(A);
         LPemilih.addActionListener(A);
         LAdmin.addActionListener(A);
+        homeBtn.addActionListener(A);
     }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LAdmin;
     private javax.swing.JButton LPemilih;
+    private javax.swing.JButton homeBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -159,7 +159,21 @@ public class Panitia {
         return panitia;
     }
 
+    public boolean cekPanitia(String user) throws SQLException
+    {
+        List<Panitia> panitia = getAllPanitia();
+        for (Panitia p : panitia)
+        {
+            if ( user.equals(p.getUser_panitia()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public List<Pemilih> getPemilih() {
         return pemilih;
     }
+    
 }

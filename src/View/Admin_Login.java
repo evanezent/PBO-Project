@@ -13,7 +13,7 @@ import java.awt.event.*;
  *
  * @author Prana
  */
-public class Admin_Login extends javax.swing.JFrame {
+public class Admin_Login extends javax.swing.JFrame implements implemenable{
 
     /**
      * Creates new form Login
@@ -41,26 +41,27 @@ public class Admin_Login extends javax.swing.JFrame {
         btnLoginAdmin = new javax.swing.JButton();
         L_asPemilih = new javax.swing.JButton();
         L_asPanitia = new javax.swing.JButton();
+        homeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(98, 10, 10));
+        jPanel2.setBackground(new java.awt.Color(254, 254, 254));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Selamat Datang di Aplikasi Pemilihan Umum");
         jLabel1.setToolTipText("");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Login Sebagai Admin");
 
-        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
         jLabel3.setText("Username");
 
-        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Password");
 
         tf_uAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +76,7 @@ public class Admin_Login extends javax.swing.JFrame {
             }
         });
 
-        btnLoginAdmin.setBackground(new java.awt.Color(5, 5, 5));
+        btnLoginAdmin.setBackground(new java.awt.Color(1, 1, 1));
         btnLoginAdmin.setForeground(new java.awt.Color(254, 254, 254));
         btnLoginAdmin.setText("Login");
         btnLoginAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +85,8 @@ public class Admin_Login extends javax.swing.JFrame {
             }
         });
 
+        L_asPemilih.setBackground(new java.awt.Color(1, 1, 1));
+        L_asPemilih.setForeground(new java.awt.Color(254, 254, 254));
         L_asPemilih.setText("Login Sebagai Pemilih");
         L_asPemilih.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +94,13 @@ public class Admin_Login extends javax.swing.JFrame {
             }
         });
 
+        L_asPanitia.setBackground(new java.awt.Color(1, 1, 1));
+        L_asPanitia.setForeground(new java.awt.Color(254, 254, 254));
         L_asPanitia.setText("Login Sebagai Panitia");
+
+        homeBtn.setBackground(new java.awt.Color(1, 1, 1));
+        homeBtn.setForeground(new java.awt.Color(254, 254, 254));
+        homeBtn.setText("HOME");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -104,6 +113,8 @@ public class Admin_Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(L_asPanitia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(L_asPemilih)
                 .addContainerGap())
@@ -145,7 +156,8 @@ public class Admin_Login extends javax.swing.JFrame {
                 .addGap(100, 100, 100)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_asPemilih)
-                    .addComponent(L_asPanitia))
+                    .addComponent(L_asPanitia)
+                    .addComponent(homeBtn))
                 .addContainerGap())
         );
 
@@ -194,11 +206,12 @@ public class Admin_Login extends javax.swing.JFrame {
     }    
     
     //Listener and Adapter
-    public void listenerLoginAdmin(ActionListener AL)
+    public void Listener(ActionListener AL)
     {
         btnLoginAdmin.addActionListener(AL);
         L_asPanitia.addActionListener(AL);
         L_asPemilih.addActionListener(AL);
+        homeBtn.addActionListener(AL);
     }
     
     //Get Button
@@ -215,6 +228,10 @@ public class Admin_Login extends javax.swing.JFrame {
     public JButton getBtnLoginAdmin() {
         return btnLoginAdmin;
     }
+
+    public JButton getHomeBtn() {
+        return homeBtn;
+    }
     
  
     
@@ -222,6 +239,7 @@ public class Admin_Login extends javax.swing.JFrame {
     private javax.swing.JButton L_asPanitia;
     private javax.swing.JButton L_asPemilih;
     private javax.swing.JButton btnLoginAdmin;
+    private javax.swing.JButton homeBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -230,4 +248,14 @@ public class Admin_Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField tf_pAdmin;
     private javax.swing.JTextField tf_uAdmin;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void Adapter(MouseAdapter e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ResetView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
