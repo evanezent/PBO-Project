@@ -12,7 +12,7 @@ import java.sql.SQLException;
  *
  * @author TamaBarbar
  */
-public class PBO {
+public class PBO { 
 
     /**
      * @param args the command line arguments
