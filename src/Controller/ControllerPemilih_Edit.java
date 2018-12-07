@@ -38,7 +38,7 @@ public class ControllerPemilih_Edit extends MouseAdapter implements ActionListen
             Pemilih q = new Pemilih(nama, ktp);
             db.updatePemilih(q,pemilih.getNoKtp());
             gui.dispose();
-            
+ 
         }
         else
         {

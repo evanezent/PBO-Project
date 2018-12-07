@@ -106,15 +106,14 @@ public class ControllerPanitia_Menu extends MouseAdapter implements ActionListen
             loadTablePemilih(); 
            
         } 
-        else if (src.equals(guiPanitia.getDelPemilih_btn())) {
-
+        else if (src.equals(guiPanitia.getEditPemilih_btn()))
+        {
             Pemilih p = pemilih.get(selectedIdx);
-            System.out.println(p.getNoKtp());
-            db.delPemilih(p.getNoKtp());
-            guiPanitia.resetPemiilih();
-            loadTablePemilih(); 
-           
-        } 
+            ControllerPemilih_Edit view = new ControllerPemilih_Edit(p);
+            guiPanitia.dispose();
+            guiPanitia.resetKandidat();
+            
+        }
         else if (src.equals(guiPanitia.getDelKandidat_btn())) {
             
             Kandidat k = kandidat.get(selectedIdx);
