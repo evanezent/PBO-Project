@@ -39,7 +39,7 @@ public class ControllerPanitia_Edit extends MouseAdapter implements ActionListen
             String nama = gui.getTxNama();
             String user = gui.getTxUser();
             String pass = gui.getTxPass();
-            Panitia update = new Panitia(user,nama,pass);
+            Panitia update = new Panitia(nama,user,pass);
             db.updatePanitia(update, panitia);
             gui.dispose();
             new ControllerAdmin_Menu();

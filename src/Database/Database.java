@@ -311,7 +311,7 @@ public class Database {
     {
         Connect();
         String query = "UPDATE `Panitia` SET ";
-               query += "`status` = '" + p.getNama_panitia()+"',";
+               query += "`Nama Panitia` = '" + p.getNama_panitia()+"',";
                query += "`Username` = '" + p.getUser_panitia()+"',";
                query += "`Password` = '" + p.getPasw_panitia()+"'";
                query += " WHERE `Username` = '" + update.getUser_panitia()+"';";
