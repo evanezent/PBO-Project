@@ -36,13 +36,13 @@ public class ControllerPanitia_LiveCount extends MouseAdapter implements ActionL
         view.setVisible(true);
         
         count = kandidat.get(0).getHasilSuara()/nPemilih*100;
-        String.format("%.2f", count);
-        hasil1 = Double.toString(count);
+        //String.format("%.2f", count);
+        hasil1 = String.format("%.2f", count);
         view.setNo1(hasil1);
         //no 2
         count = kandidat.get(1).getHasilSuara()/nPemilih*100;
-        String.format("%.2f", count);
-        hasil2 = Double.toString(count);
+        //String.format("%.2f", count);
+        hasil2 = String.format("%.2f", count);
         view.setNo2(hasil2);
     }
 
