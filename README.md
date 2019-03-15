@@ -5,11 +5,11 @@ Database Name : OOP
 
 Table :
 
-*Pemilih
+* Pemilih
 
-*Kandidat
+* Kandidat
 
-*Admin
+* Admin
 
 Isi tabel bisa dilihat di codingan
 
