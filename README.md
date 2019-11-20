@@ -1,5 +1,5 @@
 # PBO_Project
-import database di PHP MY ADMIN, tipe Collation yang UTF 8 unicode ci,
+import database di PHP MY ADMIN
 
 Database Name : OOP
 
